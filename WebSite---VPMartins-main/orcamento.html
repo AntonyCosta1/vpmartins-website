@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Solicitar Orçamento - VP Martins - Serviços profissionais de hidráulica e elétrica" />
+  <title>Solicitar Orçamento - VP Martins</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Font Awesome para ícones -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <!-- Animações AOS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+
+  <link rel="stylesheet" href="css/estilo.css" />
+
+  <style>
+    .contact-btn {
+      transition: all 0.3s ease;
+    }
+
+    .contact-btn:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    }
+
+    .hero-gradient {
+      background: linear-gradient(135deg, #dc2626 0%, #7f1d1d 100%);
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-900">
+  <!-- Header Moderno -->
+  <header class="bg-gradient-to-r from-red-600/95 to-red-700/95 text-white shadow-lg">
+    <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-20">
+        <!-- Logo -->
+        <div class="flex-shrink-0">
+          <a href="index.html" class="flex items-center space-x-2 hover:opacity-80 transition-opacity">
+            <img src="img/logovp.png" alt="Logo VP Martins" class="h-16 w-auto">
+          </a>
+        </div>
+
+        <!-- Menu Desktop -->
+        <div class="hidden md:flex space-x-8">
+          <a href="index.html#hero" class="hover:text-yellow-300 transition-colors duration-300 font-semibold">Início</a>
+          <a href="index.html#servicos" class="hover:text-yellow-300 transition-colors duration-300 font-semibold">Serviços</a>
+          <a href="projetos.html" class="hover:text-yellow-300 transition-colors duration-300 font-semibold">Portfolio</a>
+          <a href="index.html#contato" class="hover:text-yellow-300 transition-colors duration-300 font-semibold">Contato</a>
+        </div>
+
+        <!-- CTA Button -->
+        <div class="hidden md:block">
+          <a href="index.html"
+            class="bg-white text-red-600 px-6 py-2 rounded-lg font-bold hover:bg-gray-100 transition-all duration-300 shadow-md hover:shadow-lg">← Voltar</a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <div class="md:hidden">
+          <a href="index.html"
+            class="bg-yellow-400 text-gray-900 px-4 py-2 rounded-lg font-bold hover:bg-yellow-300 text-sm">← Voltar</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero Section com Background -->
+  <section class="hero-gradient text-white py-20 md:py-32 relative overflow-hidden">
+    <!-- Background Pattern -->
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute top-0 right-0 w-96 h-96 bg-yellow-400 rounded-full -mr-48 -mt-48"></div>
+      <div class="absolute bottom-0 left-0 w-72 h-72 bg-yellow-400 rounded-full -ml-36 -mb-36"></div>
+    </div>
+
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+      <h1 class="text-5xl md:text-6xl font-bold mb-6" data-aos="fade-up">
+        <i class="fas fa-calculator text-yellow-300 mr-4"></i>Solicite seu Orçamento
+      </h1>
+      <p class="text-xl md:text-2xl text-red-100 mb-8 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+        Entre em contato agora e receba uma proposta personalizada para seu projeto
+      </p>
+      <div class="h-1 w-24 bg-yellow-400 mx-auto" data-aos="fade-up" data-aos-delay="200"></div>
+    </div>
+  </section>
+
+  <!-- Métodos de Contato -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16" data-aos="fade-up">
+        <h2 class="text-4xl font-bold text-gray-900 mb-4">
+          <i class="fas fa-phone text-red-600 mr-3"></i>Escolha a Melhor Forma de Contato
+        </h2>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+          Estamos prontos para atender você através do seu canal preferido. Responderemos o mais rápido possível!
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- WhatsApp -->
+        <div class="contact-btn bg-white rounded-xl shadow-lg p-8 hover:shadow-2xl text-center" data-aos="fade-up">
+          <div class="inline-flex items-center justify-center w-20 h-20 bg-green-100 rounded-full mb-6">
+            <i class="fab fa-whatsapp text-4xl text-green-600"></i>
+          </div>
+          <h3 class="text-2xl font-bold text-gray-900 mb-3">WhatsApp</h3>
+          <p class="text-gray-600 mb-6">
+            Envie uma mensagem instantânea e receba um atendimento rápido e personalizado
+          </p>
+          <a href="https://wa.me/5511999999999?text=Olá%20VP%20Martins!%20Gostaria%20de%20solicitar%20um%20orçamento."
+            target="_blank"
+            class="inline-block w-full bg-gradient-to-r from-green-500 to-green-600 text-white px-6 py-4 rounded-lg font-bold hover:from-green-600 hover:to-green-700 transition-all duration-300 shadow-md hover:shadow-lg">
+            <i class="fab fa-whatsapp mr-2"></i>Enviar Mensagem
+          </a>
+        </div>
+
+        <!-- Telefone -->
+        <div class="contact-btn bg-white rounded-xl shadow-lg p-8 hover:shadow-2xl text-center" data-aos="fade-up" data-aos-delay="100">
+          <div class="inline-flex items-center justify-center w-20 h-20 bg-blue-100 rounded-full mb-6">
+            <i class="fas fa-phone text-4xl text-blue-600"></i>
+          </div>
+          <h3 class="text-2xl font-bold text-gray-900 mb-3">Ligar Agora</h3>
+          <p class="text-gray-600 mb-6">
+            Converse diretamente com nossos especialistas para discutir seu projeto
+          </p>
+          <a href="tel:+5511999999999"
+            class="inline-block w-full bg-gradient-to-r from-blue-500 to-blue-600 text-white px-6 py-4 rounded-lg font-bold hover:from-blue-600 hover:to-blue-700 transition-all duration-300 shadow-md hover:shadow-lg">
+            <i class="fas fa-phone mr-2"></i>Ligar (11) 9999-9999
+          </a>
+        </div>
+
+        <!-- Formulário -->
+        <div class="contact-btn bg-white rounded-xl shadow-lg p-8 hover:shadow-2xl text-center" data-aos="fade-up" data-aos-delay="200">
+          <div class="inline-flex items-center justify-center w-20 h-20 bg-red-100 rounded-full mb-6">
+            <i class="fas fa-envelope text-4xl text-red-600"></i>
+          </div>
+          <h3 class="text-2xl font-bold text-gray-900 mb-3">Enviar Email</h3>
+          <p class="text-gray-600 mb-6">
+            Envie seus detalhes via formulário e retornaremos em breve com uma proposta
+          </p>
+          <a href="index.html#contato"
+            class="inline-block w-full bg-gradient-to-r from-red-600 to-red-700 text-white px-6 py-4 rounded-lg font-bold hover:from-red-700 hover:to-red-800 transition-all duration-300 shadow-md hover:shadow-lg">
+            <i class="fas fa-envelope mr-2"></i>Abrir Formulário
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Vantagens Seção -->
+  <section class="py-20 bg-gradient-to-br from-gray-100 to-gray-200">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16" data-aos="fade-up">
+        <h2 class="text-4xl font-bold text-gray-900 mb-4">Por que Escolher a VP Martins?</h2>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="flex gap-4" data-aos="fade-right">
+          <div class="flex-shrink-0">
+            <div class="flex items-center justify-center h-12 w-12 rounded-md bg-red-600 text-white">
+              <i class="fas fa-check text-xl"></i>
+            </div>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold text-gray-900 mb-2">Mais de 20 Anos de Experiência</h3>
+            <p class="text-gray-600">Expertise consolidada em hidráulica e elétrica</p>
+          </div>
+        </div>
+
+        <div class="flex gap-4" data-aos="fade-left">
+          <div class="flex-shrink-0">
+            <div class="flex items-center justify-center h-12 w-12 rounded-md bg-red-600 text-white">
+              <i class="fas fa-check text-xl"></i>
+            </div>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold text-gray-900 mb-2">Orçamento Rápido e Gratuito</h3>
+            <p class="text-gray-600">Resposta em até 24 horas com proposta personalizada</p>
+          </div>
+        </div>
+
+        <div class="flex gap-4" data-aos="fade-right">
+          <div class="flex-shrink-0">
+            <div class="flex items-center justify-center h-12 w-12 rounded-md bg-red-600 text-white">
+              <i class="fas fa-check text-xl"></i>
+            </div>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold text-gray-900 mb-2">Qualidade Garantida</h3>
+            <p class="text-gray-600">Todos os serviços com garantia e certificação</p>
+          </div>
+        </div>
+
+        <div class="flex gap-4" data-aos="fade-left">
+          <div class="flex-shrink-0">
+            <div class="flex items-center justify-center h-12 w-12 rounded-md bg-red-600 text-white">
+              <i class="fas fa-check text-xl"></i>
+            </div>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold text-gray-900 mb-2">Suporte Dedicado</h3>
+            <p class="text-gray-600">Atendimento personalizado durante todo o processo</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Final -->
+  <section class="py-20 bg-gradient-to-r from-red-600 to-red-700 text-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-4xl md:text-5xl font-bold mb-6" data-aos="fade-up">
+        Pronto Para Começar?
+      </h2>
+      <p class="text-lg md:text-xl text-red-100 mb-8 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+        Não perca tempo! Entre em contato agora mesmo e transforme seu projeto em realidade
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center" data-aos="fade-up" data-aos-delay="200">
+        <a href="https://wa.me/5511999999999"
+          target="_blank"
+          class="inline-block bg-green-500 text-white px-8 py-4 rounded-lg font-bold hover:bg-green-600 transition-all duration-300 shadow-lg hover:shadow-xl text-lg">
+          <i class="fab fa-whatsapp mr-2"></i>WhatsApp
+        </a>
+        <a href="tel:+5511999999999"
+          class="inline-block bg-yellow-400 text-gray-900 px-8 py-4 rounded-lg font-bold hover:bg-yellow-300 transition-all duration-300 shadow-lg hover:shadow-xl text-lg">
+          <i class="fas fa-phone mr-2"></i>Ligar
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-gray-300 py-12">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-4 gap-8 mb-8">
+        <div>
+          <h3 class="text-white font-bold mb-4">VP Martins</h3>
+          <p class="text-sm">Serviços profissionais de hidráulica e elétrica com mais de 20 anos de experiência</p>
+        </div>
+        <div>
+          <h3 class="text-white font-bold mb-4">Serviços</h3>
+          <ul class="text-sm space-y-2">
+            <li><a href="index.html#servicos" class="hover:text-white">Hidráulica</a></li>
+            <li><a href="index.html#servicos" class="hover:text-white">Elétrica</a></li>
+            <li><a href="orcamento.html" class="hover:text-white">Orçamento</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-white font-bold mb-4">Empresa</h3>
+          <ul class="text-sm space-y-2">
+            <li><a href="index.html" class="hover:text-white">Início</a></li>
+            <li><a href="projetos.html" class="hover:text-white">Projetos</a></li>
+            <li><a href="index.html#contato" class="hover:text-white">Contato</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-white font-bold mb-4">Contato</h3>
+          <p class="text-sm mb-2"><i class="fas fa-phone mr-2"></i>Telefone/WhatsApp</p>
+          <p class="text-sm"><i class="fas fa-envelope mr-2"></i>Email</p>
+        </div>
+      </div>
+      <div class="border-t border-gray-700 pt-8 text-center text-sm">
+        <p>&copy; 2026 VP Martins. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- AOS JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+  <script>
+    AOS.init({
+      duration: 800,
+      once: true,
+    });
+  </script>
+</body>
+</html>
+
+    <div class="logo-wrapper">
+      <div class="logo-box">
+        <img class="logo" src="img/logovp.png" alt="Logo VP Martins" />
+      </div>
+    </div>
+
+    <!-- Bloco centralizado -->
+    <div class="orcamento-container">
+      <h2>Como deseja seguir com seu orçamento?</h2>
+
+      <a
+        class="btn-orcamento"
+        href="https://wa.me/5547992875910?text=Olá!%20Gostaria%20de%20um%20orçamento%20da%20VP%20Martins."
+        target="_blank"
+      >
+        📱 WhatsApp
+      </a>
+
+      <a class="btn-orcamento" href="tel:+5547992875910"> 📞 Telefonar </a>
+
+      <a class="btn-orcamento" href="index.html#contato">
+        ✉️ Enviar Formulário
+      </a>
+
+      <a class="btn-orcamento btn-voltar" href="index.html">
+        ⬅️ Voltar ao Início
+      </a>
+    </div>
+  </body>
+</html>

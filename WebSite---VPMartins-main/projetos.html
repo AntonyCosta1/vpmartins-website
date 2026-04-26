@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfolio de projetos - VP Martins - Serviços profissionais de hidráulica e elétrica" />
+  <title>Portfolio de Projetos - VP Martins</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Font Awesome para ícones -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <!-- Animações AOS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+
+  <link rel="stylesheet" href="css/estilo.css" />
+
+  <style>
+    .project-card {
+      transition: all 0.3s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-8px);
+    }
+
+    .project-card img {
+      object-fit: cover;
+      height: 240px;
+    }
+
+    .modal {
+      backdrop-filter: blur(5px);
+    }
+
+    .lightbox-img {
+      max-height: 85vh;
+      max-width: 90vw;
+      object-fit: contain;
+    }
+
+    .filter-btn {
+      transition: all 0.3s ease;
+    }
+
+    .filter-btn.active {
+      background-color: #dc2626;
+      color: white;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-900">
+  <!-- Header Moderno -->
+  <header class="bg-gradient-to-r from-red-600/95 to-red-700/95 text-white shadow-lg">
+    <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-20">
+        <!-- Logo -->
+        <div class="flex-shrink-0">
+          <a href="index.html" class="flex items-center space-x-2 hover:opacity-80 transition-opacity">
+            <img src="img/logovp.png" alt="Logo VP Martins" class="h-16 w-auto">
+          </a>
+        </div>
+
+        <!-- Menu Desktop -->
+        <div class="hidden md:flex space-x-8">
+          <a href="index.html#hero" class="hover:text-yellow-300 transition-colors duration-300 font-semibold">Início</a>
+          <a href="index.html#servicos" class="hover:text-yellow-300 transition-colors duration-300 font-semibold">Serviços</a>
+          <a href="index.html#historia" class="hover:text-yellow-300 transition-colors duration-300 font-semibold">Quem Somos</a>
+          <a href="projetos.html" class="text-yellow-300 font-semibold border-b-2 border-yellow-300">Portfolio</a>
+          <a href="index.html#contato" class="hover:text-yellow-300 transition-colors duration-300 font-semibold">Contato</a>
+        </div>
+
+        <!-- CTA Button -->
+        <div class="hidden md:block">
+          <a href="orcamento.html"
+            class="bg-yellow-400 text-gray-900 px-6 py-2 rounded-lg font-bold hover:bg-yellow-300 transition-all duration-300 shadow-md hover:shadow-lg">Orçamento</a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <div class="md:hidden">
+          <a href="index.html"
+            class="bg-yellow-400 text-gray-900 px-4 py-2 rounded-lg font-bold hover:bg-yellow-300 text-sm">← Voltar</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-r from-red-600 to-red-700 text-white py-16 md:py-24">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4" data-aos="fade-up">
+        <i class="fas fa-briefcase text-yellow-400 mr-3"></i>Nossos Projetos
+      </h1>
+      <p class="text-lg md:text-xl text-red-100 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+        Conheça os trabalhos realizados pela VP Martins em serviços de hidráulica e elétrica
+      </p>
+    </div>
+  </section>
+
+  <!-- Filtros -->
+  <section class="py-12 bg-white border-b border-gray-200">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-wrap gap-3 justify-center" data-aos="fade-up">
+        <button class="filter-btn active px-6 py-2 rounded-full border-2 border-red-600 bg-red-600 text-white font-semibold hover:bg-red-700 transition-all" 
+          onclick="filtrarProjetos('todos')">
+          <i class="fas fa-th-large mr-2"></i>Todos os Projetos
+        </button>
+        <button class="filter-btn px-6 py-2 rounded-full border-2 border-red-600 text-red-600 font-semibold hover:bg-red-50 transition-all" 
+          onclick="filtrarProjetos('hidraulica')">
+          <i class="fas fa-faucet mr-2"></i>Hidráulica
+        </button>
+        <button class="filter-btn px-6 py-2 rounded-full border-2 border-red-600 text-red-600 font-semibold hover:bg-red-50 transition-all" 
+          onclick="filtrarProjetos('eletrica')">
+          <i class="fas fa-plug mr-2"></i>Elétrica
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Galeria de Projetos -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Projetos Hidráulicos -->
+      <div id="categoria-hidraulica" class="mb-20 categoria">
+        <div class="mb-12" data-aos="fade-up">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-2">
+            <i class="fas fa-faucet text-red-600 mr-3"></i>Projetos Hidráulicos
+          </h2>
+          <div class="h-1 w-20 bg-gradient-to-r from-red-600 to-red-700 rounded"></div>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4 categoria-grid" data-categoria="hidraulica">
+          <!-- Projetos Hidráulicos -->
+          <div class="project-card bg-white rounded-lg shadow-md hover:shadow-xl overflow-hidden cursor-pointer transform hover:scale-105 transition-all" onclick="abrirLightbox('img/projeto1.jpg')" data-aos="fade-up">
+            <div class="relative overflow-hidden h-56">
+              <img src="img/projeto1.jpg" alt="Projeto" class="w-full h-full object-cover">
+              <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
+                <i class="fas fa-search-plus text-white text-4xl"></i>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card bg-white rounded-lg shadow-md hover:shadow-xl overflow-hidden cursor-pointer" onclick="abrirLightbox('img/tubuVP.jpeg')" data-aos="fade-up" data-aos-delay="50">
+            <div class="relative overflow-hidden h-60">
+              <img src="img/tubuVP.jpeg" alt="Projeto" class="w-full h-full object-cover">
+              <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
+                <i class="fas fa-search-plus text-white text-4xl"></i>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card bg-white rounded-lg shadow-md hover:shadow-xl overflow-hidden cursor-pointer transform hover:scale-105 transition-all" onclick="abrirLightbox('img/gas.png')" data-aos="fade-up">
+            <div class="relative overflow-hidden h-56">
+              <img src="img/gas.png" alt="Projeto" class="w-full h-full object-cover">
+              <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
+                <i class="fas fa-search-plus text-white text-4xl"></i>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card bg-white rounded-lg shadow-md hover:shadow-xl overflow-hidden cursor-pointer transform hover:scale-105 transition-all" onclick="abrirLightbox('img/procave.jpg')" data-aos="fade-up">
+            <div class="relative overflow-hidden h-56">
+              <img src="img/procave.jpg" alt="Projeto" class="w-full h-full object-cover">
+              <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
+                <i class="fas fa-search-plus text-white text-4xl"></i>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card bg-white rounded-lg shadow-md hover:shadow-xl overflow-hidden cursor-pointer transform hover:scale-105 transition-all" onclick="abrirLightbox('img/WhatsApp Image 2026-04-21 at 19.07.15.jpeg')" data-aos="fade-up">
+            <div class="relative overflow-hidden h-56">
+              <img src="img/WhatsApp Image 2026-04-21 at 19.07.15.jpeg" alt="Projeto" class="w-full h-full object-cover">
+              <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
+                <i class="fas fa-search-plus text-white text-4xl"></i>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card bg-white rounded-lg shadow-md hover:shadow-xl overflow-hidden cursor-pointer transform hover:scale-105 transition-all" onclick="abrirLightbox('img/WhatsApp Image 2026-04-21 at 19.07.25.jpeg')" data-aos="fade-up">
+            <div class="relative overflow-hidden h-56">
+              <img src="img/WhatsApp Image 2026-04-21 at 19.07.25.jpeg" alt="Projeto" class="w-full h-full object-cover">
+              <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
+                <i class="fas fa-search-plus text-white text-4xl"></i>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card bg-white rounded-lg shadow-md hover:shadow-xl overflow-hidden cursor-pointer transform hover:scale-105 transition-all" onclick="abrirLightbox('img/WhatsApp Image 2026-04-21 at 19.08.50.jpeg')" data-aos="fade-up">
+            <div class="relative overflow-hidden h-56">
+              <img src="img/WhatsApp Image 2026-04-21 at 19.08.50.jpeg" alt="Projeto" class="w-full h-full object-cover">
+              <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
+                <i class="fas fa-search-plus text-white text-4xl"></i>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card bg-white rounded-lg shadow-md hover:shadow-xl overflow-hidden cursor-pointer transform hover:scale-105 transition-all" onclick="abrirLightbox('img/WhatsApp Image 2026-04-21 at 19.09.12.jpeg')" data-aos="fade-up">
+            <div class="relative overflow-hidden h-56">
+              <img src="img/WhatsApp Image 2026-04-21 at 19.09.12.jpeg" alt="Projeto" class="w-full h-full object-cover">
+              <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
+                <i class="fas fa-search-plus text-white text-4xl"></i>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card bg-white rounded-lg shadow-md hover:shadow-xl overflow-hidden cursor-pointer transform hover:scale-105 transition-all" onclick="abrirLightbox('img/WhatsApp Image 2026-04-21 at 19.10.02.jpeg')" data-aos="fade-up">
+            <div class="relative overflow-hidden h-56">
+              <img src="img/WhatsApp Image 2026-04-21 at 19.10.02.jpeg" alt="Projeto" class="w-full h-full object-cover">
+              <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
+                <i class="fas fa-search-plus text-white text-4xl"></i>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card bg-white rounded-lg shadow-md hover:shadow-xl overflow-hidden cursor-pointer transform hover:scale-105 transition-all" onclick="abrirLightbox('img/WhatsApp Image 2026-04-21 at 19.10.09.jpeg')" data-aos="fade-up">
+            <div class="relative overflow-hidden h-56">
+              <img src="img/WhatsApp Image 2026-04-21 at 19.10.09.jpeg" alt="Projeto" class="w-full h-full object-cover">
+              <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
+                <i class="fas fa-search-plus text-white text-4xl"></i>
+              </div
+        <div class="mb-12" data-aos="fade-up">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-2">
+            <i class="fas fa-plug text-red-600 mr-3"></i>Projetos Elétricos
+          </h2>
+          <div class="h-1 w-20 bg-gradient-to-r from-red-600 to-red-700 rounded"></div>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4 categoria-grid" data-categoria="eletrica">
+          <!-- Projetos Elétricos -->
+          <div class="project-card bg-white rounded-lg shadow-md hover:shadow-xl overflow-hidden cursor-pointer transform hover:scale-105 transition-all" onclick="abrirLightbox('img/projeto2.webp')" data-aos="fade-up">
+            <div class="relative overflow-hidden h-56">
+              <img src="img/projeto2.webp" alt="Projeto" class="w-full h-full object-cover">
+              <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
+                <i class="fas fa-search-plus text-white text-4xl"></i>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card bg-white rounded-lg shadow-md hover:shadow-xl overflow-hidden cursor-pointer transform hover:scale-105 transition-all" onclick="abrirLightbox('img/georgeELET.jpg')" data-aos="fade-up">
+            <div class="relative overflow-hidden h-56">
+              <img src="img/georgeELET.jpg" alt="Projeto" class="w-full h-full object-cover">
+              <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
+                <i class="fas fa-search-plus text-white text-4xl"></i>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card bg-white rounded-lg shadow-md hover:shadow-xl overflow-hidden cursor-pointer transform hover:scale-105 transition-all" onclick="abrirLightbox('img/WhatsApp Image 2026-04-21 at 19.10.23.jpeg')" data-aos="fade-up">
+            <div class="relative overflow-hidden h-56">
+              <img src="img/WhatsApp Image 2026-04-21 at 19.10.23.jpeg" alt="Projeto" class="w-full h-full object-cover">
+              <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
+                <i class="fas fa-search-plus text-white text-4xl"></i>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card bg-white rounded-lg shadow-md hover:shadow-xl overflow-hidden cursor-pointer transform hover:scale-105 transition-all" onclick="abrirLightbox('img/WhatsApp Image 2026-04-21 at 19.10.25.jpeg')" data-aos="fade-up">
+            <div class="relative overflow-hidden h-56">
+              <img src="img/WhatsApp Image 2026-04-21 at 19.10.25.jpeg" alt="Projeto" class="w-full h-full object-cover">
+              <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
+                <i class="fas fa-search-plus text-white text-4xl"></i>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card bg-white rounded-lg shadow-md hover:shadow-xl overflow-hidden cursor-pointer transform hover:scale-105 transition-all" onclick="abrirLightbox('img/WhatsApp Image 2026-04-21 at 19.10.27.jpeg')" data-aos="fade-up">
+            <div class="relative overflow-hidden h-56">
+              <img src="img/WhatsApp Image 2026-04-21 at 19.10.27.jpeg" alt="Projeto" class="w-full h-full object-cover">
+              <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
+                <i class="fas fa-search-plus text-white text-4xl"></i>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card bg-white rounded-lg shadow-md hover:shadow-xl overflow-hidden cursor-pointer transform hover:scale-105 transition-all" onclick="abrirLightbox('img/WhatsApp Image 2026-04-21 at 19.10.28.jpeg')" data-aos="fade-up">
+            <div class="relative overflow-hidden h-56">
+              <img src="img/WhatsApp Image 2026-04-21 at 19.10.28.jpeg" alt="Projeto" class="w-full h-full object-cover">
+              <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
+                <i class="fas fa-search-plus text-white text-4xl"></i>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card bg-white rounded-lg shadow-md hover:shadow-xl overflow-hidden cursor-pointer transform hover:scale-105 transition-all" onclick="abrirLightbox('img/WhatsApp Image 2026-04-21 at 19.10.29.jpeg')" data-aos="fade-up">
+            <div class="relative overflow-hidden h-56">
+              <img src="img/WhatsApp Image 2026-04-21 at 19.10.29.jpeg" alt="Projeto" class="w-full h-full object-cover">
+              <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
+                <i class="fas fa-search-plus text-white text-4xl"></i>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card bg-white rounded-lg shadow-md hover:shadow-xl overflow-hidden cursor-pointer transform hover:scale-105 transition-all" onclick="abrirLightbox('img/WhatsApp Image 2026-04-21 at 19.10.30.jpeg')" data-aos="fade-up">
+            <div class="relative overflow-hidden h-56">
+              <img src="img/WhatsApp Image 2026-04-21 at 19.10.30.jpeg" alt="Projeto" class="w-full h-full object-cover">
+              <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
+                <i class="fas fa-search-plus text-white text-4xl"></i>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card bg-white rounded-lg shadow-md hover:shadow-xl overflow-hidden cursor-pointer transform hover:scale-105 transition-all" onclick="abrirLightbox('img/WhatsApp Image 2026-04-21 at 19.10.34.jpeg')" data-aos="fade-up">
+            <div class="relative overflow-hidden h-56">
+              <img src="img/WhatsApp Image 2026-04-21 at 19.10.34.jpeg" alt="Projeto" class="w-full h-full object-cover">
+              <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
+                <i class="fas fa-search-plus text-white text-4xl"></i>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card bg-white rounded-lg shadow-md hover:shadow-xl overflow-hidden cursor-pointer transform hover:scale-105 transition-all" onclick="abrirLightbox('img/WhatsApp Image 2026-04-21 at 19.10.37.jpeg')" data-aos="fade-up">
+            <div class="relative overflow-hidden h-56">
+              <img src="img/WhatsApp Image 2026-04-21 at 19.10.37.jpeg" alt="Projeto" class="w-full h-full object-cover">
+              <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
+                <i class="fas fa-search-plus text-white text-4xl"></i>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card bg-white rounded-lg shadow-md hover:shadow-xl overflow-hidden cursor-pointer transform hover:scale-105 transition-all" onclick="abrirLightbox('img/WhatsApp Image 2026-04-21 at 19.10.38.jpeg')" data-aos="fade-up">
+            <div class="relative overflow-hidden h-56">
+              <img src="img/WhatsApp Image 2026-04-21 at 19.10.38.jpeg" alt="Projeto" class="w-full h-full object-cover">
+              <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
+                <i class="fas fa-search-plus text-white text-4xl"></i>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card bg-white rounded-lg shadow-md hover:shadow-xl overflow-hidden cursor-pointer transform hover:scale-105 transition-all" onclick="abrirLightbox('img/WhatsApp Image 2026-04-21 at 19.10.42.jpeg')" data-aos="fade-up">
+            <div class="relative overflow-hidden h-56">
+              <img src="img/WhatsApp Image 2026-04-21 at 19.10.42.jpeg" alt="Projeto" class="w-full h-full object-cover">
+              <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
+                <i class="fas fa-search-plus text-white text-4xl"></i>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card bg-white rounded-lg shadow-md hover:shadow-xl overflow-hidden cursor-pointer transform hover:scale-105 transition-all" onclick="abrirLightbox('img/WhatsApp Image 2026-04-21 at 19.10.47.jpeg')" data-aos="fade-up">
+            <div class="relative overflow-hidden h-56">
+              <img src="img/WhatsApp Image 2026-04-21 at 19.10.47.jpeg" alt="Projeto" class="w-full h-full object-cover">
+              <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
+                <i class="fas fa-search-plus text-white text-4xl"></i>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card bg-white rounded-lg shadow-md hover:shadow-xl overflow-hidden cursor-pointer transform hover:scale-105 transition-all" onclick="abrirLightbox('img/WhatsApp Image 2026-04-21 at 19.10.54.jpeg')" data-aos="fade-up">
+            <div class="relative overflow-hidden h-56">
+              <img src="img/WhatsApp Image 2026-04-21 at 19.10.54.jpeg" alt="Projeto" class="w-full h-full object-cover">
+              <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
+                <i class="fas fa-search-plus text-white text-4xl"></i>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card bg-white rounded-lg shadow-md hover:shadow-xl overflow-hidden cursor-pointer transform hover:scale-105 transition-all" onclick="abrirLightbox('img/WhatsApp Image 2026-04-21 at 19.10.56.jpeg')" data-aos="fade-up">
+            <div class="relative overflow-hidden h-56">
+              <img src="img/WhatsApp Image 2026-04-21 at 19.10.56.jpeg" alt="Projeto" class="w-full h-full object-cover">
+              <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
+                <i class="fas fa-search-plus text-white text-4xl"></i>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card bg-white rounded-lg shadow-md hover:shadow-xl overflow-hidden cursor-pointer transform hover:scale-105 transition-all" onclick="abrirLightbox('img/WhatsApp Image 2026-04-21 at 19.11.30.jpeg')" data-aos="fade-up">
+            <div class="relative overflow-hidden h-56">
+              <img src="img/WhatsApp Image 2026-04-21 at 19.11.30.jpeg" alt="Projeto" class="w-full h-full object-cover">
+              <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
+                <i class="fas fa-search-plus text-white text-4xl"></i>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card bg-white rounded-lg shadow-md hover:shadow-xl overflow-hidden cursor-pointer transform hover:scale-105 transition-all" onclick="abrirLightbox('img/WhatsApp Image 2026-04-21 at 19.11.40.jpeg')" data-aos="fade-up">
+            <div class="relative overflow-hidden h-56">
+              <img src="img/WhatsApp Image 2026-04-21 at 19.11.40.jpeg" alt="Projeto" class="w-full h-full object-cover">
+              <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
+                <i class="fas fa-search-plus text-white text-4xl"></i>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card bg-white rounded-lg shadow-md hover:shadow-xl overflow-hidden cursor-pointer transform hover:scale-105 transition-all" onclick="abrirLightbox('img/WhatsApp Image 2026-04-21 at 19.11.51.jpeg')" data-aos="fade-up">
+            <div class="relative overflow-hidden h-56">
+              <img src="img/WhatsApp Image 2026-04-21 at 19.11.51.jpeg" alt="Projeto" class="w-full h-full object-cover">
+              <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
+                <i class="fas fa-search-plus text-white text-4xl"></i>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card bg-white rounded-lg shadow-md hover:shadow-xl overflow-hidden cursor-pointer transform hover:scale-105 transition-all" onclick="abrirLightbox('img/WhatsApp Image 2026-04-21 at 19.12.06.jpeg')" data-aos="fade-up">
+            <div class="relative overflow-hidden h-56">
+              <img src="img/WhatsApp Image 2026-04-21 at 19.12.06.jpeg" alt="Projeto" class="w-full h-full object-cover">
+              <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
+                <i class="fas fa-search-plus text-white text-4xl"></i>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card bg-white rounded-lg shadow-md hover:shadow-xl overflow-hidden cursor-pointer transform hover:scale-105 transition-all" onclick="abrirLightbox('img/WhatsApp Image 2026-04-21 at 19.12.09.jpeg')" data-aos="fade-up">
+            <div class="relative overflow-hidden h-56">
+              <img src="img/WhatsApp Image 2026-04-21 at 19.12.09.jpeg" alt="Projeto" class="w-full h-full object-cover">
+              <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
+                <i class="fas fa-search-plus text-white text-4xl"></i>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card bg-white rounded-lg shadow-md hover:shadow-xl overflow-hidden cursor-pointer transform hover:scale-105 transition-all" onclick="abrirLightbox('img/WhatsApp Image 2026-04-21 at 19.12.12.jpeg')" data-aos="fade-up">
+            <div class="relative overflow-hidden h-56">
+              <img src="img/WhatsApp Image 2026-04-21 at 19.12.12.jpeg" alt="Projeto" class="w-full h-full object-cover">
+              <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
+                <i class="fas fa-search-plus text-white text-4xl"></i>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card bg-white rounded-lg shadow-md hover:shadow-xl overflow-hidden cursor-pointer transform hover:scale-105 transition-all" onclick="abrirLightbox('img/WhatsApp Image 2026-04-21 at 19.12.16.jpeg')" data-aos="fade-up">
+            <div class="relative overflow-hidden h-56">
+              <img src="img/WhatsApp Image 2026-04-21 at 19.12.16.jpeg" alt="Projeto" class="w-full h-full object-cover">
+              <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
+                <i class="fas fa-search-plus text-white text-4xl"></i>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card bg-white rounded-lg shadow-md hover:shadow-xl overflow-hidden cursor-pointer transform hover:scale-105 transition-all" onclick="abrirLightbox('img/WhatsApp Image 2026-04-21 at 19.12.39.jpeg')" data-aos="fade-up">
+            <div class="relative overflow-hidden h-56">
+              <img src="img/WhatsApp Image 2026-04-21 at 19.12.39.jpeg" alt="Projeto" class="w-full h-full object-cover">
+              <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
+                <i class="fas fa-search-plus text-white text-4xl"></i>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card bg-white rounded-lg shadow-md hover:shadow-xl overflow-hidden cursor-pointer transform hover:scale-105 transition-all" onclick="abrirLightbox('img/WhatsApp Image 2026-04-25 at 07.52.42.jpeg')" data-aos="fade-up">
+            <div class="relative overflow-hidden h-56">
+              <img src="img/WhatsApp Image 2026-04-25 at 07.52.42.jpeg" alt="Projeto" class="w-full h-full object-cover">
+              <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
+                <i class="fas fa-search-plus text-white text-4xl"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-20 bg-gradient-to-r from-red-600 to-red-700 text-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-4xl md:text-5xl font-bold mb-6" data-aos="fade-up">Interessado em Nossos Serviços?</h2>
+      <p class="text-lg md:text-xl text-red-100 mb-8 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+        Solicite um orçamento gratuito e descubra como podemos ajudar seu projeto
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center" data-aos="fade-up" data-aos-delay="200">
+        <a href="orcamento.html"
+          class="inline-block bg-yellow-400 text-gray-900 px-8 py-3 rounded-lg font-bold hover:bg-yellow-300 transition-all duration-300 shadow-lg hover:shadow-xl">
+          <i class="fas fa-file-invoice-dollar mr-2"></i>Solicitar Orçamento
+        </a>
+        <a href="index.html#contato"
+          class="inline-block bg-white/20 text-white border-2 border-white px-8 py-3 rounded-lg font-bold hover:bg-white/30 transition-all duration-300">
+          <i class="fas fa-phone mr-2"></i>Entrar em Contato
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-gray-300 py-12">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-4 gap-8 mb-8">
+        <div>
+          <h3 class="text-white font-bold mb-4">VP Martins</h3>
+          <p class="text-sm">Serviços profissionais de hidráulica e elétrica com mais de 20 anos de experiência</p>
+        </div>
+        <div>
+          <h3 class="text-white font-bold mb-4">Serviços</h3>
+          <ul class="text-sm space-y-2">
+            <li><a href="#" class="hover:text-white">Hidráulica</a></li>
+            <li><a href="#" class="hover:text-white">Elétrica</a></li>
+            <li><a href="orcamento.html" class="hover:text-white">Orçamento</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-white font-bold mb-4">Empresa</h3>
+          <ul class="text-sm space-y-2">
+            <li><a href="index.html" class="hover:text-white">Sobre</a></li>
+            <li><a href="projetos.html" class="hover:text-white">Projetos</a></li>
+            <li><a href="index.html#contato" class="hover:text-white">Contato</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-white font-bold mb-4">Contato</h3>
+          <p class="text-sm mb-2"><i class="fas fa-phone mr-2"></i>Telefone e WhatsApp</p>
+          <p class="text-sm"><i class="fas fa-envelope mr-2"></i>Email de contato</p>
+        </div>
+      </div>
+      <div class="border-t border-gray-700 pt-8 text-center text-sm">
+        <p>&copy; 2026 VP Martins. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Lightbox Modal -->
+  <div id="lightbox" class="hidden fixed inset-0 bg-black/95 flex items-center justify-center z-50 modal p-4" onclick="if(event.target === this) fecharLightbox()">
+    <button onclick="fecharLightbox()" class="absolute top-4 right-4 text-white text-4xl hover:text-gray-300">
+      <i class="fas fa-times"></i>
+    </button>
+    <button onclick="imagemAnterior()" class="absolute left-4 top-1/2 transform -translate-y-1/2 text-white text-3xl hover:text-gray-300">
+      <i class="fas fa-chevron-left"></i>
+    </button>
+    <img id="lightbox-img" src="" alt="" class="lightbox-img">
+    <button onclick="proximaImagem()" class="absolute right-4 top-1/2 transform -translate-y-1/2 text-white text-3xl hover:text-gray-300">
+      <i class="fas fa-chevron-right"></i>
+    </button>
+  </div>
+
+  <!-- AOS JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+  <script>
+    // Inicializar AOS
+    AOS.init({
+      duration: 800,
+      once: true,
+    });
+
+    // Array de todas as imagens
+    const todasAsImagens = [
+      'img/projeto1.jpg', 'img/tubuVP.jpeg', 'img/gas.png', 'img/procave.jpg',
+      'img/WhatsApp Image 2026-04-21 at 19.07.15.jpeg', 'img/WhatsApp Image 2026-04-21 at 19.07.25.jpeg',
+      'img/WhatsApp Image 2026-04-21 at 19.08.50.jpeg', 'img/WhatsApp Image 2026-04-21 at 19.09.12.jpeg',
+      'img/WhatsApp Image 2026-04-21 at 19.10.02.jpeg', 'img/WhatsApp Image 2026-04-21 at 19.10.09.jpeg',
+      'img/projeto2.webp', 'img/georgeELET.jpg',
+      'img/WhatsApp Image 2026-04-21 at 19.10.23.jpeg', 'img/WhatsApp Image 2026-04-21 at 19.10.25.jpeg',
+      'img/WhatsApp Image 2026-04-21 at 19.10.27.jpeg', 'img/WhatsApp Image 2026-04-21 at 19.10.28.jpeg',
+      'img/WhatsApp Image 2026-04-21 at 19.10.29.jpeg', 'img/WhatsApp Image 2026-04-21 at 19.10.30.jpeg',
+      'img/WhatsApp Image 2026-04-21 at 19.10.34.jpeg', 'img/WhatsApp Image 2026-04-21 at 19.10.37.jpeg',
+      'img/WhatsApp Image 2026-04-21 at 19.10.38.jpeg', 'img/WhatsApp Image 2026-04-21 at 19.10.42.jpeg',
+      'img/WhatsApp Image 2026-04-21 at 19.10.47.jpeg', 'img/WhatsApp Image 2026-04-21 at 19.10.54.jpeg',
+      'img/WhatsApp Image 2026-04-21 at 19.10.56.jpeg', 'img/WhatsApp Image 2026-04-21 at 19.11.30.jpeg',
+      'img/WhatsApp Image 2026-04-21 at 19.11.40.jpeg', 'img/WhatsApp Image 2026-04-21 at 19.11.51.jpeg',
+      'img/WhatsApp Image 2026-04-21 at 19.12.06.jpeg', 'img/WhatsApp Image 2026-04-21 at 19.12.09.jpeg',
+      'img/WhatsApp Image 2026-04-21 at 19.12.12.jpeg', 'img/WhatsApp Image 2026-04-21 at 19.12.16.jpeg',
+      'img/WhatsApp Image 2026-04-21 at 19.12.39.jpeg', 'img/WhatsApp Image 2026-04-25 at 07.52.42.jpeg'
+    ];
+
+    let imagemAtual = 0;
+
+    function abrirLightbox(src, titulo) {
+      imagemAtual = todasAsImagens.indexOf(src);
+      document.getElementById('lightbox-img').src = src;
+      document.getElementById('lightbox').classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function fecharLightbox() {
+      document.getElementById('lightbox').classList.add('hidden');
+      document.body.style.overflow = 'auto';
+    }
+
+    function proximaImagem() {
+      imagemAtual = (imagemAtual + 1) % todasAsImagens.length;
+      document.getElementById('lightbox-img').src = todasAsImagens[imagemAtual];
+    }
+
+    function imagemAnterior() {
+      imagemAtual = (imagemAtual - 1 + todasAsImagens.length) % todasAsImagens.length;
+      document.getElementById('lightbox-img').src = todasAsImagens[imagemAtual];
+    }
+
+    // Filtrar projetos por categoria
+    function filtrarProjetos(categoria) {
+      // Atualizar botões ativos
+      document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.classList.remove('active', 'bg-red-600', 'text-white');
+        btn.classList.add('text-red-600');
+      });
+
+      event.target.closest('.filter-btn').classList.add('active', 'bg-red-600', 'text-white');
+
+      // Mostrar/Ocultar categorias
+      if (categoria === 'todos') {
+        document.querySelectorAll('.categoria').forEach(cat => {
+          cat.style.display = 'block';
+        });
+      } else {
+        document.getElementById('categoria-hidraulica').style.display = categoria === 'hidraulica' ? 'block' : 'none';
+        document.getElementById('categoria-eletrica').style.display = categoria === 'eletrica' ? 'block' : 'none';
+      }
+    }
+
+    // Navegação com teclado
+    document.addEventListener('keydown', (e) => {
+      if (!document.getElementById('lightbox').classList.contains('hidden')) {
+        if (e.key === 'ArrowRight') proximaImagem();
+        if (e.key === 'ArrowLeft') imagemAnterior();
+        if (e.key === 'Escape') fecharLightbox();
+      }
+    });
+  </script>
+</body>
+</html>
