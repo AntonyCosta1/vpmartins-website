@@ -1,304 +1,140 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nossos Projetos - VP Martins</title>
+  <meta name="description" content="Conheça alguns trabalhos realizados pela VP Martins em serviços de hidráulica e elétrica.">
+  <meta name="theme-color" content="#A60D18">
   <link rel="icon" href="img/favicon.ico" type="image/x-icon">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Portfolio de projetos - VP Martins - Serviços profissionais de hidráulica e elétrica" />
-  <title>Portfolio de Projetos - VP Martins</title>
-
-  <script src="https://cdn.tailwindcss.com"></script>
-
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
-  <link rel="stylesheet" href="css/estilo.css" />
-
-  <style>
-    .project-card {
-      transition: all 0.3s ease;
-    }
-
-    .project-card:hover {
-      transform: translateY(-8px);
-    }
-
-    .project-card img {
-      width: 100%;
-      height: 260px;
-      object-fit: cover;
-    }
-
-    .modal {
-      backdrop-filter: blur(5px);
-    }
-
-    .lightbox-img {
-      max-height: 85vh;
-      max-width: 90vw;
-      object-fit: contain;
-    }
-  </style>
+  <link rel="stylesheet" href="css/site.css">
+  <link rel="stylesheet" href="vendor/fontawesome/css/all.min.css">
+  <script>document.documentElement.classList.add('js');</script>
+  <script src="js/site.js" defer></script>
 </head>
 
-<body class="bg-gray-50 text-gray-900">
-
-  <header class="bg-gradient-to-r from-red-600/95 to-red-700/95 text-white shadow-lg">
-    <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex justify-between items-center h-20">
-
-        <div class="flex-shrink-0">
-          <a href="index.html" class="flex items-center space-x-2 hover:opacity-80 transition-opacity">
-            <img src="img/logovp.png" alt="Logo VP Martins" class="h-16 w-auto">
-          </a>
-        </div>
-
-        <div class="hidden md:flex space-x-8">
-          <a href="index.html#hero" class="hover:text-yellow-300 transition-colors duration-300 font-semibold">Início</a>
-          <a href="index.html#servicos" class="hover:text-yellow-300 transition-colors duration-300 font-semibold">Serviços</a>
-          <a href="index.html#historia" class="hover:text-yellow-300 transition-colors duration-300 font-semibold">Quem Somos</a>
-          <a href="projetos.html" class="text-yellow-300 font-semibold border-b-2 border-yellow-300">Portfólio</a>
-          <a href="index.html#contato" class="hover:text-yellow-300 transition-colors duration-300 font-semibold">Contato</a>
-        </div>
-
-        <div class="hidden md:block">
-          <a href="orcamento.html"
-            class="bg-yellow-400 text-gray-900 px-6 py-2 rounded-lg font-bold hover:bg-yellow-300 transition-all duration-300 shadow-md hover:shadow-lg">
-            Orçamento
-          </a>
-        </div>
-
-        <div class="md:hidden">
-          <a href="index.html"
-            class="bg-yellow-400 text-gray-900 px-4 py-2 rounded-lg font-bold hover:bg-yellow-300 text-sm">
-            ← Voltar
-          </a>
-        </div>
-
-      </div>
-    </nav>
+<body class="bg-white text-gray-900">
+  <header class="on-dark sticky top-0 z-50 bg-vp-red text-white shadow-md">
+    <div class="container-site flex flex-wrap items-center justify-between gap-x-6 py-2">
+      <a href="index.html" class="rounded-md bg-white px-2 py-1">
+        <img src="img/site/logo.webp" alt="VP Martins, página inicial" width="306" height="120" class="h-12 w-auto">
+      </a>
+      <button id="menu-toggle" type="button" class="min-h-[44px] min-w-[44px] text-2xl md:hidden" aria-expanded="false" aria-controls="menu-principal" aria-label="Abrir menu">
+        <i class="fas fa-bars" aria-hidden="true"></i>
+      </button>
+      <nav id="menu-principal" aria-label="Principal" class="w-full md:w-auto">
+        <ul class="flex flex-col gap-1 py-3 md:flex-row md:items-center md:gap-6 md:py-0">
+          <li><a href="index.html" class="block py-2 font-semibold hover:text-vp-yellow">Início</a></li>
+          <li><a href="index.html#servicos" class="block py-2 font-semibold hover:text-vp-yellow">Serviços</a></li>
+          <li><a href="index.html#quem-somos" class="block py-2 font-semibold hover:text-vp-yellow">Quem Somos</a></li>
+          <li><a href="projetos.html" class="block py-2 font-semibold hover:text-vp-yellow">Portfólio</a></li>
+          <li><a href="index.html#contato" class="block py-2 font-semibold hover:text-vp-yellow">Contato</a></li>
+          <li><a href="orcamento.html" class="btn-primary mt-2 w-full md:mt-0 md:w-auto">Orçamento</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <section class="bg-gradient-to-r from-red-600 to-red-700 text-white py-16 md:py-24">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h1 class="text-4xl md:text-5xl font-bold mb-4" data-aos="fade-up">
-        <i class="fas fa-briefcase text-yellow-400 mr-3"></i>Nossos Projetos
-      </h1>
-      <p class="text-lg md:text-xl text-red-100 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
-        Conheça alguns trabalhos realizados pela VP Martins em serviços de hidráulica e elétrica.
-      </p>
-    </div>
-  </section>
-
-  <section class="py-20 bg-gray-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-      <div class="text-center mb-14" data-aos="fade-up">
-        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-          Galeria de Trabalhos
-        </h2>
-        <div class="h-1 w-24 bg-gradient-to-r from-red-600 to-red-700 rounded mx-auto mb-4"></div>
-        <p class="text-gray-600 max-w-2xl mx-auto">
-          Clique em qualquer imagem para visualizar em tamanho maior.
-        </p>
+  <main>
+    <section class="on-dark bg-vp-red py-14 text-white md:py-20">
+      <div class="container-site">
+        <h1 class="mb-3 text-3xl md:text-5xl">Nossos Projetos</h1>
+        <p class="max-w-2xl text-lg">Conheça alguns trabalhos realizados pela VP Martins em serviços de hidráulica e elétrica.</p>
       </div>
+    </section>
 
-      <div id="galeria" class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"></div>
-
-    </div>
-  </section>
-
-  <section class="py-20 bg-gradient-to-r from-red-600 to-red-700 text-white">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h2 class="text-4xl md:text-5xl font-bold mb-6" data-aos="fade-up">
-        Interessado em Nossos Serviços?
-      </h2>
-      <p class="text-lg md:text-xl text-red-100 mb-8 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
-        Solicite um orçamento gratuito e descubra como podemos ajudar seu projeto.
-      </p>
-
-      <div class="flex flex-col sm:flex-row gap-4 justify-center" data-aos="fade-up" data-aos-delay="200">
-        <a href="orcamento.html"
-          class="inline-block bg-yellow-400 text-gray-900 px-8 py-3 rounded-lg font-bold hover:bg-yellow-300 transition-all duration-300 shadow-lg hover:shadow-xl">
-          <i class="fas fa-file-invoice-dollar mr-2"></i>Solicitar Orçamento
-        </a>
-
-        <a href="index.html#contato"
-          class="inline-block bg-white/20 text-white border-2 border-white px-8 py-3 rounded-lg font-bold hover:bg-white/30 transition-all duration-300">
-          <i class="fas fa-phone mr-2"></i>Entrar em Contato
-        </a>
+    <section class="section">
+      <div class="container-site">
+        <h2 class="mb-3 text-2xl md:text-3xl">Galeria de Trabalhos</h2>
+        <p class="mb-8 text-gray-700">Clique em qualquer imagem para visualizar em tamanho maior.</p>
+        <ul id="galeria" class="grid grid-cols-2 gap-3 md:grid-cols-3 md:gap-4 lg:grid-cols-4">
+          <li><a href="img/site/obra-assentamento-tijolos.webp" class="block overflow-hidden rounded-xl"><img src="img/site/obra-assentamento-tijolos-thumb.webp" alt="Pedreiro de capacete amarelo e cinto de segurança assentando tijolos em obra de prédio" width="600" height="400" loading="lazy" class="aspect-[4/3] w-full object-cover"></a></li>
+          <li><a href="img/site/rede-gas-medidores.webp" class="block overflow-hidden rounded-xl"><img src="img/site/rede-gas-medidores-thumb.webp" alt="Técnico conferindo medidores individuais de gás instalados em parede de prédio" width="406" height="538" loading="lazy" class="aspect-[4/3] w-full object-cover"></a></li>
+          <li><a href="img/site/torres-residenciais.webp" class="block overflow-hidden rounded-xl"><img src="img/site/torres-residenciais-thumb.webp" alt="Torres residenciais altas vistas de baixo, com um edifício ainda em obra" width="600" height="276" loading="lazy" class="aspect-[4/3] w-full object-cover"></a></li>
+          <li><a href="img/site/incendio-tubulacao-vermelha.webp" class="block overflow-hidden rounded-xl"><img src="img/site/incendio-tubulacao-vermelha-thumb.webp" alt="Tubulações vermelhas verticais de combate a incêndio em poço técnico de prédio" width="600" height="1303" loading="lazy" class="aspect-[4/3] w-full object-cover"></a></li>
+          <li><a href="img/site/tubos-parede-concreto.webp" class="block overflow-hidden rounded-xl"><img src="img/site/tubos-parede-concreto-thumb.webp" alt="Conjunto de tubos verticais claros fixados com abraçadeiras em parede de concreto" width="600" height="452" loading="lazy" class="aspect-[4/3] w-full object-cover"></a></li>
+          <li><a href="img/site/edificio-em-construcao.webp" class="block overflow-hidden rounded-xl"><img src="img/site/edificio-em-construcao-thumb.webp" alt="Andares de edifício em construção, com andaimes e elevador de obra na fachada" width="600" height="276" loading="lazy" class="aspect-[4/3] w-full object-cover"></a></li>
+          <li><a href="img/site/tubulacao-suspensa-teto.webp" class="block overflow-hidden rounded-xl"><img src="img/site/tubulacao-suspensa-teto-thumb.webp" alt="Tubulações suspensas no teto de um pavimento em obra, apoiado por escoras" width="600" height="1333" loading="lazy" class="aspect-[4/3] w-full object-cover"></a></li>
+          <li><a href="img/site/maquina-rosquear-tubos.webp" class="block overflow-hidden rounded-xl"><img src="img/site/maquina-rosquear-tubos-thumb.webp" alt="Máquina vermelha para rosquear tubos, sobre tábuas de madeira" width="540" height="1204" loading="lazy" class="aspect-[4/3] w-full object-cover"></a></li>
+          <li><a href="img/site/bombas-casa-de-maquinas.webp" class="block overflow-hidden rounded-xl"><img src="img/site/bombas-casa-de-maquinas-thumb.webp" alt="Técnico de camiseta vermelha instalando conjunto de bombas verdes em casa de máquinas" width="600" height="402" loading="lazy" class="aspect-[4/3] w-full object-cover"></a></li>
+          <li><a href="img/site/tubos-curva-teto-parede.webp" class="block overflow-hidden rounded-xl"><img src="img/site/tubos-curva-teto-parede-thumb.webp" alt="Tubos claros fazendo curva do teto para a parede em prumada de prédio" width="600" height="1333" loading="lazy" class="aspect-[4/3] w-full object-cover"></a></li>
+          <li><a href="img/site/prumada-abracadeiras-pretas.webp" class="block overflow-hidden rounded-xl"><img src="img/site/prumada-abracadeiras-pretas-thumb.webp" alt="Prumada de tubos claros descendo do teto, presa com abraçadeiras pretas" width="600" height="1333" loading="lazy" class="aspect-[4/3] w-full object-cover"></a></li>
+          <li><a href="img/site/tubos-alinhados-parede.webp" class="block overflow-hidden rounded-xl"><img src="img/site/tubos-alinhados-parede-thumb.webp" alt="Tubos claros alinhados em parede, vistos de lado, com fixações pretas" width="600" height="992" loading="lazy" class="aspect-[4/3] w-full object-cover"></a></li>
+          <li><a href="img/site/corredor-tecnico-tubos.webp" class="block overflow-hidden rounded-xl"><img src="img/site/corredor-tecnico-tubos-thumb.webp" alt="Corredor estreito com tubos claros em toda a extensão da parede" width="600" height="992" loading="lazy" class="aspect-[4/3] w-full object-cover"></a></li>
+          <li><a href="img/site/corredor-tecnico-teto.webp" class="block overflow-hidden rounded-xl"><img src="img/site/corredor-tecnico-teto-thumb.webp" alt="Tubos claros vistos de baixo, acompanhando a parede e o teto de um corredor técnico" width="600" height="992" loading="lazy" class="aspect-[4/3] w-full object-cover"></a></li>
+          <li><a href="img/site/tecnico-apontando-prumada.webp" class="block overflow-hidden rounded-xl"><img src="img/site/tecnico-apontando-prumada-thumb.webp" alt="Técnico de uniforme vermelho e capacete branco apontando para prumada de tubos" width="600" height="992" loading="lazy" class="aspect-[4/3] w-full object-cover"></a></li>
+          <li><a href="img/site/feixe-tubos-sala-tecnica.webp" class="block overflow-hidden rounded-xl"><img src="img/site/feixe-tubos-sala-tecnica-thumb.webp" alt="Feixe de tubos claros com curvas organizadas em parede de sala técnica" width="600" height="300" loading="lazy" class="aspect-[4/3] w-full object-cover"></a></li>
+          <li><a href="img/site/tecnico-conferindo-tubos.webp" class="block overflow-hidden rounded-xl"><img src="img/site/tecnico-conferindo-tubos-thumb.webp" alt="Técnico de uniforme vermelho conferindo tubos claros fixados em parede" width="600" height="992" loading="lazy" class="aspect-[4/3] w-full object-cover"></a></li>
+          <li><a href="img/site/registro-azul-caixa.webp" class="block overflow-hidden rounded-xl"><img src="img/site/registro-azul-caixa-thumb.webp" alt="Registro azul e tubulação preta em caixa subterrânea durante manutenção" width="600" height="726" loading="lazy" class="aspect-[4/3] w-full object-cover"></a></li>
+          <li><a href="img/site/tecnico-passarela-tanques.webp" class="block overflow-hidden rounded-xl"><img src="img/site/tecnico-passarela-tanques-thumb.webp" alt="Técnico de camiseta vermelha trabalhando em passarela entre grandes tanques de água" width="600" height="726" loading="lazy" class="aspect-[4/3] w-full object-cover"></a></li>
+          <li><a href="img/site/sistema-inox-paineis.webp" class="block overflow-hidden rounded-xl"><img src="img/site/sistema-inox-paineis-thumb.webp" alt="Dois técnicos montando sistema com tubos de inox, válvulas vermelhas e painéis elétricos" width="600" height="402" loading="lazy" class="aspect-[4/3] w-full object-cover"></a></li>
+          <li><a href="img/site/tecnicos-sala-tubos-valvulas.webp" class="block overflow-hidden rounded-xl"><img src="img/site/tecnicos-sala-tubos-valvulas-thumb.webp" alt="Dois técnicos ao lado de sistema de tubos e válvulas em sala técnica" width="600" height="726" loading="lazy" class="aspect-[4/3] w-full object-cover"></a></li>
+          <li><a href="img/site/vala-tubulacao-preta.webp" class="block overflow-hidden rounded-xl"><img src="img/site/vala-tubulacao-preta-thumb.webp" alt="Técnico de capacete branco em vala, ao lado de longa tubulação preta enterrada" width="600" height="726" loading="lazy" class="aspect-[4/3] w-full object-cover"></a></li>
+          <li><a href="img/site/registros-azuis-concreto.webp" class="block overflow-hidden rounded-xl"><img src="img/site/registros-azuis-concreto-thumb.webp" alt="Três registros azuis ligados a tubulação de ferro em caixa de concreto" width="600" height="397" loading="lazy" class="aspect-[4/3] w-full object-cover"></a></li>
+          <li><a href="img/site/solda-tubo-polietileno.webp" class="block overflow-hidden rounded-xl"><img src="img/site/solda-tubo-polietileno-thumb.webp" alt="Tubo preto de polietileno preso a máquina de solda em vala de terra" width="600" height="726" loading="lazy" class="aspect-[4/3] w-full object-cover"></a></li>
+          <li><a href="img/site/poco-concreto-tubulacao.webp" class="block overflow-hidden rounded-xl"><img src="img/site/poco-concreto-tubulacao-thumb.webp" alt="Dois técnicos instalando peça de tubulação suspensa por cabos em poço de concreto" width="600" height="726" loading="lazy" class="aspect-[4/3] w-full object-cover"></a></li>
+          <li><a href="img/site/bomba-incendio-base-metalica.webp" class="block overflow-hidden rounded-xl"><img src="img/site/bomba-incendio-base-metalica-thumb.webp" alt="Conjunto vermelho de bombas de incêndio, com motor e tubulação, montado sobre base metálica" width="600" height="290" loading="lazy" class="aspect-[4/3] w-full object-cover"></a></li>
+          <li><a href="img/site/equipe-uniforme-vermelho.webp" class="block overflow-hidden rounded-xl"><img src="img/site/equipe-uniforme-vermelho-thumb.webp" alt="Sete integrantes da equipe, de uniforme vermelho e capacete, posando em obra" width="600" height="450" loading="lazy" class="aspect-[4/3] w-full object-cover"></a></li>
+        </ul>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <footer class="bg-gray-900 text-gray-300 py-12">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid md:grid-cols-4 gap-8 mb-8">
-
-        <div>
-          <h3 class="text-white font-bold mb-4">VP Martins</h3>
-          <p class="text-sm">
-            Serviços profissionais de hidráulica e elétrica com mais de 20 anos de experiência.
-          </p>
+    <section class="section bg-gray-50 text-center">
+      <div class="container-site">
+        <h2 class="mb-3 text-2xl md:text-3xl">Interessado em Nossos Serviços?</h2>
+        <p class="mb-6 text-lg text-gray-700">Solicite um orçamento gratuito e descubra como podemos ajudar seu projeto.</p>
+        <div class="flex flex-col justify-center gap-3 sm:flex-row">
+          <a href="orcamento.html" class="btn-primary">Solicitar Orçamento</a>
+          <a href="index.html#contato" class="btn-secondary">Entrar em Contato</a>
         </div>
+      </div>
+    </section>
 
+    <dialog id="lightbox" aria-label="Foto ampliada" class="max-h-[95vh] max-w-[95vw] overflow-hidden rounded-lg bg-gray-900 p-0">
+      <button id="lightbox-fechar" type="button" aria-label="Fechar foto" class="on-dark absolute right-2 top-2 flex h-11 w-11 items-center justify-center rounded-full bg-gray-900/80 text-xl text-white"><i class="fas fa-times" aria-hidden="true"></i></button>
+    </dialog>
+  </main>
+
+  <footer class="on-dark bg-gray-900 py-12 text-gray-300">
+    <div class="container-site">
+      <div class="grid gap-10 md:grid-cols-3">
         <div>
-          <h3 class="text-white font-bold mb-4">Serviços</h3>
-          <ul class="text-sm space-y-2">
-            <li><a href="index.html#servicos" class="hover:text-white">Hidráulica</a></li>
-            <li><a href="index.html#servicos" class="hover:text-white">Elétrica</a></li>
-            <li><a href="orcamento.html" class="hover:text-white">Orçamento</a></li>
+          <h2 class="mb-3 text-lg text-white">VP Martins</h2>
+          <p class="text-sm leading-relaxed">Serviços profissionais de hidráulica e elétrica com mais de 20 anos de experiência e excelência no mercado.</p>
+          <ul class="mt-4 flex gap-3">
+            <li><a href="https://www.facebook.com/share/18TPzP5fPe/" aria-label="Facebook" class="flex h-11 w-11 items-center justify-center rounded-full bg-white/10 hover:bg-vp-yellow hover:text-gray-900"><i class="fab fa-facebook-f" aria-hidden="true"></i></a></li>
+            <li><a href="https://www.instagram.com/vpmartins.instaladora?igsh=MWNsYWswM3QwdHM4Ng==" aria-label="Instagram" class="flex h-11 w-11 items-center justify-center rounded-full bg-white/10 hover:bg-vp-yellow hover:text-gray-900"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
+            <li><a href="https://wa.me/5547991012690?text=Ol%C3%A1%2C%20gostaria%20de%20fazer%20um%20or%C3%A7amento." aria-label="WhatsApp" class="flex h-11 w-11 items-center justify-center rounded-full bg-white/10 hover:bg-vp-yellow hover:text-gray-900"><i class="fab fa-whatsapp" aria-hidden="true"></i></a></li>
           </ul>
         </div>
-
+        <nav aria-label="Rodapé">
+          <h2 class="mb-3 text-lg text-white">Navegação</h2>
+          <ul class="space-y-1 text-sm">
+            <li><a href="index.html" class="inline-block py-1 hover:text-vp-yellow">Início</a></li>
+            <li><a href="index.html#servicos" class="inline-block py-1 hover:text-vp-yellow">Serviços</a></li>
+            <li><a href="index.html#quem-somos" class="inline-block py-1 hover:text-vp-yellow">Quem Somos</a></li>
+            <li><a href="projetos.html" class="inline-block py-1 hover:text-vp-yellow">Portfólio</a></li>
+            <li><a href="index.html#contato" class="inline-block py-1 hover:text-vp-yellow">Contato</a></li>
+            <li><a href="privacidade.html" class="inline-block py-1 hover:text-vp-yellow">Política de Privacidade</a></li>
+          </ul>
+        </nav>
         <div>
-          <h3 class="text-white font-bold mb-4">Empresa</h3>
-          <ul class="text-sm space-y-2">
-            <li><a href="index.html#historia" class="hover:text-white">Sobre</a></li>
-            <li><a href="projetos.html" class="hover:text-white">Projetos</a></li>
-            <li><a href="index.html#contato" class="hover:text-white">Contato</a></li>
+          <h2 class="mb-3 text-lg text-white">Contato</h2>
+          <ul class="space-y-1 text-sm">
+            <li><a href="tel:+5547991012690" class="inline-block py-1 hover:text-vp-yellow"><i class="fas fa-phone mr-2 text-vp-yellow" aria-hidden="true"></i>(47) 99101-2690</a></li>
+            <li><a href="mailto:vpmartinsadm@gmail.com" class="inline-block py-1 hover:text-vp-yellow"><i class="fas fa-envelope mr-2 text-vp-yellow" aria-hidden="true"></i>vpmartinsadm@gmail.com</a></li>
+            <li class="py-1"><i class="fas fa-location-dot mr-2 text-vp-yellow" aria-hidden="true"></i>Itajaí - SC</li>
+            <li class="py-1"><i class="fas fa-clock mr-2 text-vp-yellow" aria-hidden="true"></i>Seg-Sex: 08h às 18h</li>
           </ul>
         </div>
-
-        <div>
-          <h3 class="text-white font-bold mb-4">Contato</h3>
-          <p class="text-sm mb-2"><i class="fas fa-phone mr-2"></i>Telefone e WhatsApp</p>
-          <p class="text-sm"><i class="fas fa-envelope mr-2"></i>Email de contato</p>
-        </div>
-
       </div>
-
-      <div class="border-t border-gray-700 pt-8 text-center text-sm">
-        <p>&copy; 2026 VP Martins. Todos os direitos reservados.</p>
+      <div class="mt-10 space-y-1 border-t border-gray-700 pt-6 text-center text-sm">
+        <p>Vanderlei Pereira Martins | CNPJ 04.982.483/0001-28 | Itajaí - SC</p>
+        <p>© 2026 Vanderlei Pereira Martins (VP Martins). Fotos: acervo próprio. Todos os direitos reservados.</p>
       </div>
     </div>
   </footer>
-
-  <div id="lightbox"
-    class="hidden fixed inset-0 bg-black/95 flex items-center justify-center z-50 modal p-4"
-    onclick="if(event.target === this) fecharLightbox()">
-
-    <button onclick="fecharLightbox()" class="absolute top-4 right-4 text-white text-4xl hover:text-gray-300">
-      <i class="fas fa-times"></i>
-    </button>
-
-    <button onclick="imagemAnterior()"
-      class="absolute left-4 top-1/2 transform -translate-y-1/2 text-white text-3xl hover:text-gray-300">
-      <i class="fas fa-chevron-left"></i>
-    </button>
-
-    <img id="lightbox-img" src="" alt="Imagem do projeto" class="lightbox-img rounded-lg shadow-2xl">
-
-    <button onclick="proximaImagem()"
-      class="absolute right-4 top-1/2 transform -translate-y-1/2 text-white text-3xl hover:text-gray-300">
-      <i class="fas fa-chevron-right"></i>
-    </button>
-  </div>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-
-  <script>
-    AOS.init({
-      duration: 800,
-      once: true,
-    });
-
-    const todasAsImagens = [
-      'img/projeto1.jpg',
-      'img/tubuVP.jpeg',
-      'img/gas.png',
-      'img/procave.jpg',
-      'img/WhatsApp Image 2026-04-21 at 19.07.15.jpeg',
-      'img/WhatsApp Image 2026-04-21 at 19.07.25.jpeg',
-      'img/WhatsApp Image 2026-04-21 at 19.08.50.jpeg',
-      'img/WhatsApp Image 2026-04-21 at 19.09.12.jpeg',
-      'img/WhatsApp Image 2026-04-21 at 19.10.02.jpeg',
-      'img/WhatsApp Image 2026-04-21 at 19.10.09.jpeg',
-      'img/projeto2.webp',
-      'img/georgeELET.jpg',
-      'img/WhatsApp Image 2026-04-21 at 19.10.23.jpeg',
-      'img/WhatsApp Image 2026-04-21 at 19.10.25.jpeg',
-      'img/WhatsApp Image 2026-04-21 at 19.10.27.jpeg',
-      'img/WhatsApp Image 2026-04-21 at 19.10.28.jpeg',
-      'img/WhatsApp Image 2026-04-21 at 19.10.29.jpeg',
-      'img/WhatsApp Image 2026-04-21 at 19.10.30.jpeg',
-      'img/WhatsApp Image 2026-04-21 at 19.10.34.jpeg',
-      'img/WhatsApp Image 2026-04-21 at 19.10.37.jpeg',
-      'img/WhatsApp Image 2026-04-21 at 19.10.38.jpeg',
-      'img/WhatsApp Image 2026-04-21 at 19.10.42.jpeg',
-      'img/WhatsApp Image 2026-04-21 at 19.10.47.jpeg',
-      'img/WhatsApp Image 2026-04-21 at 19.10.54.jpeg',
-      'img/WhatsApp Image 2026-04-21 at 19.10.56.jpeg',
-      'img/WhatsApp Image 2026-04-21 at 19.11.30.jpeg',
-      'img/WhatsApp Image 2026-04-21 at 19.11.40.jpeg',
-      'img/WhatsApp Image 2026-04-21 at 19.11.51.jpeg',
-      'img/WhatsApp Image 2026-04-21 at 19.12.06.jpeg',
-      'img/WhatsApp Image 2026-04-21 at 19.12.09.jpeg',
-      'img/WhatsApp Image 2026-04-21 at 19.12.12.jpeg',
-      'img/WhatsApp Image 2026-04-21 at 19.12.16.jpeg',
-      'img/WhatsApp Image 2026-04-21 at 19.12.39.jpeg',
-      'img/WhatsApp Image 2026-04-25 at 07.52.42.jpeg'
-    ];
-
-    const galeria = document.getElementById('galeria');
-
-    todasAsImagens.forEach((imagem, index) => {
-      const card = document.createElement('div');
-
-      card.className = 'project-card bg-white rounded-2xl shadow-md hover:shadow-2xl overflow-hidden cursor-pointer group';
-      card.setAttribute('data-aos', 'fade-up');
-      card.setAttribute('data-aos-delay', String((index % 4) * 80));
-      card.onclick = () => abrirLightbox(imagem);
-
-      card.innerHTML = `
-        <div class="relative overflow-hidden">
-          <img src="${imagem}" alt="Projeto VP Martins ${index + 1}" class="group-hover:scale-110 transition-transform duration-500">
-          <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-            <div class="bg-white/20 backdrop-blur-sm rounded-full w-16 h-16 flex items-center justify-center">
-              <i class="fas fa-search-plus text-white text-3xl"></i>
-            </div>
-          </div>
-        </div>
-      `;
-
-      galeria.appendChild(card);
-    });
-
-    let imagemAtual = 0;
-
-    function abrirLightbox(src) {
-      imagemAtual = todasAsImagens.indexOf(src);
-      document.getElementById('lightbox-img').src = src;
-      document.getElementById('lightbox').classList.remove('hidden');
-      document.body.style.overflow = 'hidden';
-    }
-
-    function fecharLightbox() {
-      document.getElementById('lightbox').classList.add('hidden');
-      document.body.style.overflow = 'auto';
-    }
-
-    function proximaImagem() {
-      imagemAtual = (imagemAtual + 1) % todasAsImagens.length;
-      document.getElementById('lightbox-img').src = todasAsImagens[imagemAtual];
-    }
-
-    function imagemAnterior() {
-      imagemAtual = (imagemAtual - 1 + todasAsImagens.length) % todasAsImagens.length;
-      document.getElementById('lightbox-img').src = todasAsImagens[imagemAtual];
-    }
-
-    document.addEventListener('keydown', (e) => {
-      const lightboxAberto = !document.getElementById('lightbox').classList.contains('hidden');
-
-      if (lightboxAberto) {
-        if (e.key === 'ArrowRight') proximaImagem();
-        if (e.key === 'ArrowLeft') imagemAnterior();
-        if (e.key === 'Escape') fecharLightbox();
-      }
-    });
-  </script>
-
 </body>
 
 </html>

@@ -1,705 +1,269 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 
 <head>
-  <meta charset="UTF-8" />
-  <link rel="icon" href="img/favicon.ico" type="image/x-icon">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description"
-    content="VP Martins - Serviços profissionais de hidráulica e elétrica. Atendimento técnico confiável 24h para prédios, comércios e indústrias." />
-  <meta name="keywords" content="hidráulica, elétrica, instalação, manutenção, orçamento" />
-  <meta name="theme-color" content="#A60D18" />
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>VP Martins - Hidráulica e Elétrica Profissional</title>
-
-  <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- Swiper CSS -->
-  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-
-  <!-- Font Awesome para ícones -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-
-  <!-- Animações AOS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
-
-  <link rel="stylesheet" href="css/estilo.css" />
+  <meta name="description" content="VP Martins - Serviços profissionais de hidráulica e elétrica. Atendimento técnico confiável para prédios, comércios e indústrias.">
+  <meta name="theme-color" content="#A60D18">
+  <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="css/site.css">
+  <link rel="stylesheet" href="vendor/fontawesome/css/all.min.css">
+  <script>document.documentElement.classList.add('js');</script>
+  <script src="js/site.js" defer></script>
 </head>
 
-<body class="bg-gray-50 text-gray-900">
-  <!-- Header Moderno -->
-  <header
-    class="bg-gradient-to-r from-red-600/95 to-red-700/95 text-white shadow-lg sticky top-0 z-50 backdrop-blur-sm">
-    <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex justify-between items-center h-20">
-        <!-- Logo -->
-        <div class="flex-shrink-0">
-          <img src="img/logovp.png" alt="Logo VP Martins" class="h-16 w-auto">
-        </div>
-
-        <!-- Menu Desktop -->
-        <div class="hidden md:flex space-x-8">
-          <a href="#hero" class="hover:text-yellow-300 transition-colors duration-300 font-semibold">Início</a>
-          <a href="#servicos" class="hover:text-yellow-300 transition-colors duration-300 font-semibold">Serviços</a>
-          <a href="#historia" class="hover:text-yellow-300 transition-colors duration-300 font-semibold">Quem Somos</a>
-          <a href="#clientes" class="hover:text-yellow-300 transition-colors duration-300 font-semibold">Clientes</a>
-          <a href="#contato" class="hover:text-yellow-300 transition-colors duration-300 font-semibold">Contato</a>
-          <a href="#projetos.html"
-            class="hover:text-yellow-300 transition-colors duration-300 font-semibold">Portfólio</a>
-        </div>
-
-        <!-- CTA Button -->
-        <div class="hidden md:block">
-          <a href="orcamento.html"
-            class="bg-yellow-400 text-gray-900 px-6 py-2 rounded-lg font-bold hover:bg-yellow-300 transition-all duration-300 shadow-md hover:shadow-lg">Orçamento</a>
-        </div>
-
-        <!-- Mobile Menu Button -->
-        <div class="md:hidden">
-          <button id="mobile-menu-btn" class="text-white text-2xl">
-            <i class="fas fa-bars"></i>
-          </button>
-        </div>
-      </div>
-
-      <!-- Mobile Menu -->
-      <div id="mobile-menu" class="hidden md:hidden pb-4 border-t border-red-600">
-        <a href="#hero" class="block py-2 hover:text-yellow-300 transition-colors">Início</a>
-        <a href="#servicos" class="block py-2 hover:text-yellow-300 transition-colors">Serviços</a>
-        <a href="#historia" class="block py-2 hover:text-yellow-300 transition-colors">Quem Somos</a>
-        <a href="#clientes" class="block py-2 hover:text-yellow-300 transition-colors">Clientes</a>
-        <a href="#contato" class="block py-2 hover:text-yellow-300 transition-colors">Contato</a>
-        <a href="#projetos.html" class="block py-2 hover:text-yellow-300 transition-colors">Portfólio</a>
-        <a href="orcamento.html"
-          class="block mt-3 bg-yellow-400 text-gray-900 px-4 py-2 rounded-lg font-bold text-center">Orçamento</a>
-      </div>
-    </nav>
+<body class="bg-white text-gray-900">
+  <header class="on-dark sticky top-0 z-50 bg-vp-red text-white shadow-md">
+    <div class="container-site flex flex-wrap items-center justify-between gap-x-6 py-2">
+      <a href="index.html" class="rounded-md bg-white px-2 py-1">
+        <img src="img/site/logo.webp" alt="VP Martins, página inicial" width="306" height="120" class="h-12 w-auto">
+      </a>
+      <button id="menu-toggle" type="button" class="min-h-[44px] min-w-[44px] text-2xl md:hidden" aria-expanded="false" aria-controls="menu-principal" aria-label="Abrir menu">
+        <i class="fas fa-bars" aria-hidden="true"></i>
+      </button>
+      <nav id="menu-principal" aria-label="Principal" class="w-full md:w-auto">
+        <ul class="flex flex-col gap-1 py-3 md:flex-row md:items-center md:gap-6 md:py-0">
+          <li><a href="index.html" class="block py-2 font-semibold hover:text-vp-yellow">Início</a></li>
+          <li><a href="index.html#servicos" class="block py-2 font-semibold hover:text-vp-yellow">Serviços</a></li>
+          <li><a href="index.html#quem-somos" class="block py-2 font-semibold hover:text-vp-yellow">Quem Somos</a></li>
+          <li><a href="projetos.html" class="block py-2 font-semibold hover:text-vp-yellow">Portfólio</a></li>
+          <li><a href="index.html#contato" class="block py-2 font-semibold hover:text-vp-yellow">Contato</a></li>
+          <li><a href="orcamento.html" class="btn-primary mt-2 w-full md:mt-0 md:w-auto">Orçamento</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <!-- Hero Section com Swiper -->
-  <section id="hero" class="relative h-96 md:h-screen overflow-hidden">
-    <div class="swiper-container h-full w-full">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide h-full"
-          style="background-image: url('img/fundo bom.jpg'); background-size: cover; background-position: center;">
-          <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/60"></div>
-          <div class="absolute inset-0 flex items-end md:items-center p-8 md:p-12 text-white md:pt-20">
-            <div class="max-w-3xl pb-20">
-              <h2 class="text-2xl md:text-4xl lg:text-5xl font-bold mb-4 animate-typing leading-tight">Projetos
-                Hidráulicos e Elétricos com Precisão</h2>
-              <p class="text-sm md:text-lg lg:text-xl mb-6 opacity-90 leading-relaxed animate-fade-in">Atendimento
-                técnico, rápido e confiável para prédios, comércios e indústrias</p>
-              <a href="orcamento.html"
-                class="inline-block bg-yellow-400 text-gray-900 px-8 py-3 rounded-lg font-bold text-sm md:text-base hover:bg-yellow-300 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 animate-slide-up">Solicitar
-                Orçamento</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="swiper-slide h-full"
-          style="background-image: url('img/georgeELET.jpg'); background-size: cover; background-position: center;">
-          <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/60"></div>
-          <div class="absolute inset-0 flex items-end md:items-center p-8 md:p-12 text-white md:pt-20">
-            <div class="max-w-3xl pb-20">
-              <h2 class="text-2xl md:text-4xl lg:text-5xl font-bold mb-4 animate-typing leading-tight">Sua Segurança em
-                Primeiro Lugar</h2>
-              <p class="text-sm md:text-lg lg:text-xl mb-6 opacity-90 leading-relaxed animate-fade-in">Instalações
-                elétricas seguras e eficientes para seu negócio</p>
-              <a href="projetos.html"
-                class="inline-block bg-yellow-400 text-gray-900 px-8 py-3 rounded-lg font-bold text-sm md:text-base hover:bg-yellow-300 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 animate-slide-up">Conheça
-                Nossos Projetos</a>
-            </div>
+  <main>
+    <section id="inicio" class="on-dark relative isolate overflow-hidden bg-gray-900 text-white">
+      <img src="img/site/capa.webp" alt="Técnicos montando sistema de tubos de inox, válvulas vermelhas e painéis elétricos em sala técnica" width="1600" height="1072" fetchpriority="high" class="absolute inset-0 -z-10 h-full w-full object-cover opacity-40">
+      <div class="container-site py-20 md:py-32">
+        <div class="max-w-3xl">
+          <h1 class="mb-4 text-3xl md:text-5xl">Projetos Hidráulicos e Elétricos com Precisão</h1>
+          <p class="mb-8 text-lg leading-relaxed md:text-xl">Atendimento técnico, rápido e confiável para prédios, comércios e indústrias</p>
+          <div class="flex flex-col gap-3 sm:flex-row">
+            <a href="orcamento.html" class="btn-primary">Orçamento</a>
+            <a href="projetos.html" class="btn-secondary">Ver Projetos</a>
           </div>
         </div>
       </div>
+    </section>
 
-      <!-- Pagination -->
-      <div class="swiper-pagination absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10"></div>
-
-      <!-- Navigation Buttons -->
-      <div
-        class="swiper-button-prev absolute left-4 top-1/2 transform -translate-y-1/2 z-10 text-white !w-6 !h-6 !bg-white/10 flex items-center justify-center hover:!bg-white/25 transition-all">
-      </div>
-      <div
-        class="swiper-button-next absolute right-4 top-1/2 transform -translate-y-1/2 z-10 text-white !w-6 !h-6 !bg-white/10 flex items-center justify-center hover:!bg-white/25 transition-all">
-      </div>
-    </div>
-  </section>
-
-  <!-- Seção de Serviços -->
-  <section id="servicos" class="py-20 bg-gradient-to-br from-white via-gray-50 to-gray-100">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-16" data-aos="fade-up">
-        <div class="inline-block mb-4">
-          <span class="bg-red-100 text-red-700 px-4 py-2 rounded-full text-sm font-bold">NOSSOS SERVIÇOS</span>
+    <section id="servicos" class="section bg-gray-50">
+      <div class="container-site">
+        <div class="mb-10 max-w-2xl">
+          <p class="mb-2 text-sm font-bold uppercase tracking-wide text-vp-red">Nossos serviços</p>
+          <h2 class="mb-3 text-3xl md:text-4xl">Soluções Completas</h2>
+          <p class="text-lg text-gray-700">Mais de 20 anos oferecendo serviços de qualidade em hidráulica e elétrica</p>
         </div>
-        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Soluções Completas</h2>
-        <p class="text-gray-600 text-lg max-w-2xl mx-auto">Mais de 20 anos oferecendo serviços de qualidade em
-          hidráulica e elétrica</p>
-      </div>
-
-      <div class="grid md:grid-cols-3 gap-8">
-        <!-- Serviço 1 -->
-        <div
-          class="bg-white rounded-2xl shadow-md hover:shadow-2xl transition-all duration-300 transform hover:scale-105 p-8 border-t-4 border-red-700"
-          data-aos="fade-up" data-aos-delay="0">
-          <div class="relative">
-            <div
-              class="w-16 h-16 bg-gradient-to-br from-red-600 to-red-700 rounded-xl flex items-center justify-center text-white shadow-lg mb-4">
-              <i class="fas fa-plug text-2xl"></i>
-            </div>
-          </div>
-          <h3 class="text-2xl font-bold text-gray-900 mb-3">Instalações Elétricas</h3>
-          <p class="text-gray-700 leading-relaxed mb-4">Projetos e execução em conformidade com as normas técnicas.
-            Instalações seguras e modernas para sua residência ou negócio.</p>
-          <div class="space-y-2">
-            <div class="flex items-center text-sm text-gray-600">
-              <i class="fas fa-check-circle text-yellow-400 mr-2"></i>
-              <span>Instalações residenciais</span>
-            </div>
-            <div class="flex items-center text-sm text-gray-600">
-              <i class="fas fa-check-circle text-yellow-400 mr-2"></i>
-              <span>Projetos comerciais</span>
-            </div>
-            <div class="flex items-center text-sm text-gray-600">
-              <i class="fas fa-check-circle text-yellow-400 mr-2"></i>
-              <span>Sistemas industriais</span>
-            </div>
-          </div>
+        <div class="grid gap-6 md:grid-cols-2">
+          <article class="card">
+            <i class="fas fa-plug mb-4 text-3xl text-vp-red" aria-hidden="true"></i>
+            <h3 class="mb-3 text-xl">Instalações Elétricas</h3>
+            <p class="mb-4 leading-relaxed text-gray-700">Projetos e execução em conformidade com as normas técnicas. Instalações seguras e modernas para sua residência ou negócio.</p>
+            <ul class="space-y-2 text-gray-700">
+              <li class="flex gap-2"><i class="fas fa-check-circle mt-1 text-vp-red" aria-hidden="true"></i><span>Instalações residenciais</span></li>
+              <li class="flex gap-2"><i class="fas fa-check-circle mt-1 text-vp-red" aria-hidden="true"></i><span>Projetos comerciais</span></li>
+              <li class="flex gap-2"><i class="fas fa-check-circle mt-1 text-vp-red" aria-hidden="true"></i><span>Sistemas industriais</span></li>
+            </ul>
+          </article>
+          <article class="card">
+            <i class="fas fa-faucet mb-4 text-3xl text-vp-red" aria-hidden="true"></i>
+            <h3 class="mb-3 text-xl">Serviços Hidráulicos</h3>
+            <p class="mb-4 leading-relaxed text-gray-700">Instalação e manutenção de sistemas hidráulicos completos. Atuamos em projetos de qualquer envergadura com expertise.</p>
+            <ul class="space-y-2 text-gray-700">
+              <li class="flex gap-2"><i class="fas fa-check-circle mt-1 text-vp-red" aria-hidden="true"></i><span>Instalações e reformas</span></li>
+              <li class="flex gap-2"><i class="fas fa-check-circle mt-1 text-vp-red" aria-hidden="true"></i><span>Manutenção preventiva</span></li>
+              <li class="flex gap-2"><i class="fas fa-check-circle mt-1 text-vp-red" aria-hidden="true"></i><span>Consertos emergenciais</span></li>
+            </ul>
+          </article>
         </div>
+      </div>
+    </section>
 
-        <!-- Serviço 2 -->
-        <div
-          class="bg-white rounded-2xl shadow-md hover:shadow-2xl transition-all duration-300 transform hover:scale-105 p-8 border-t-4 border-red-700"
-          data-aos="fade-up" data-aos-delay="100">
-          <div class="relative">
-            <div
-              class="w-16 h-16 bg-gradient-to-br from-red-600 to-red-700 rounded-xl flex items-center justify-center text-white shadow-lg mb-4">
-              <i class="fas fa-faucet text-2xl"></i>
-            </div>
+    <section id="quem-somos" class="section">
+      <div class="container-site grid items-center gap-10 md:grid-cols-2">
+        <img src="img/site/historia-thumb.webp" srcset="img/site/historia-thumb.webp 600w, img/site/historia.webp 1600w" sizes="(min-width: 768px) 50vw, 100vw" alt="Integrante da equipe da VP Martins em vala de obra, ao lado de longa tubulação preta" width="600" height="725" loading="lazy" class="aspect-[4/5] w-full rounded-xl object-cover md:aspect-square">
+        <div>
+          <p class="mb-2 text-sm font-bold uppercase tracking-wide text-vp-red">Quem somos</p>
+          <h2 class="mb-5 text-3xl md:text-4xl">Nossa História e Missão</h2>
+          <div class="space-y-4 leading-relaxed text-gray-700">
+            <p>A <strong>VP Martins</strong> nasceu com o propósito de oferecer serviços hidráulicos e elétricos de alta qualidade. Desde nossa fundação, trabalhamos para ser referência no mercado de soluções técnicas.</p>
+            <p>Ao longo de mais de <strong>20 anos</strong>, consolidamos nossa reputação atuando em <strong>projetos prediais, industriais e comerciais</strong>, sempre prezando por segurança, agilidade e conformidade técnica.</p>
+            <p>Nossa experiência abrange construção civil, gerenciamento de obras, gerenciamento de projetos, execução, automação, manutenção preventiva e reformas em geral. Tudo com profissionalismo e responsabilidade.</p>
+            <p class="flex gap-2 font-semibold text-gray-900"><i class="fas fa-shield-alt mt-1 text-vp-red" aria-hidden="true"></i>Certificado em qualidade e segurança</p>
           </div>
-          <h3 class="text-2xl font-bold text-gray-900 mb-3">Serviços Hidráulicos</h3>
-          <p class="text-gray-700 leading-relaxed mb-4">Instalação e manutenção de sistemas hidráulicos completos.
-            Atuamos em projetos de qualquer envergadura com expertise.</p>
-          <div class="space-y-2">
-            <div class="flex items-center text-sm text-gray-600">
-              <i class="fas fa-check-circle text-yellow-400 mr-2"></i>
-              <span>Instalações e reformas</span>
-            </div>
-            <div class="flex items-center text-sm text-gray-600">
-              <i class="fas fa-check-circle text-yellow-400 mr-2"></i>
-              <span>Manutenção preventiva</span>
-            </div>
-            <div class="flex items-center text-sm text-gray-600">
-              <i class="fas fa-check-circle text-yellow-400 mr-2"></i>
-              <span>Consertos emergenciais</span>
-            </div>
+          <div class="mt-6 flex flex-col gap-3 sm:flex-row">
+            <a href="index.html#contato" class="btn-primary">Conheça Mais</a>
+            <a href="projetos.html" class="btn-secondary">Ver Portfólio</a>
           </div>
         </div>
       </div>
-    </div>
-  </section>
-  </ul>
-  </div>
-  </div>
-  <!-- CTA Section - Call to Action -->
-  <section class="py-16 bg-gradient-to-r from-red-700 to-red-900 text-white" data-aos="fade-up">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h2 class="text-3xl md:text-4xl font-bold mb-4">Pronto para começar seu projeto?</h2>
-      <p class="text-lg text-red-100 mb-8 max-w-2xl mx-auto">Entre em contato conosco para uma consultoria gratuita e
-        descubra como podemos transformar seus projetos em realidade</p>
-      <div class="flex flex-col md:flex-row gap-4 justify-center">
-        <a href="#contato"
-          class="bg-yellow-400 text-gray-900 px-8 py-4 rounded-lg font-bold text-lg hover:bg-yellow-300 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 inline-block">
-          Solicitar Orçamento
-        </a>
-        <a href="tel:+554799250832"
-          class="border-2 border-yellow-400 text-yellow-400 px-8 py-4 rounded-lg font-bold text-lg hover:bg-yellow-400/10 transition-all duration-300 inline-block">
-          <i class="fas fa-phone mr-2"></i>Ligar Agora
-        </a>
+    </section>
+
+    <section aria-label="Nossos números" class="on-dark bg-vp-red py-10 text-white">
+      <div class="container-site grid gap-6 text-center sm:grid-cols-3">
+          <div>
+            <p class="text-4xl font-bold text-vp-yellow">20+</p>
+            <p class="mt-1 font-semibold">Anos de Experiência</p>
+          </div>
+          <div>
+            <p class="text-4xl font-bold text-vp-yellow">+50</p>
+            <p class="mt-1 font-semibold">Projetos Realizados</p>
+          </div>
+          <div>
+            <p class="text-4xl font-bold text-vp-yellow">100%</p>
+            <p class="mt-1 font-semibold">Clientes Satisfeitos</p>
+          </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Seção de História -->
-  <section id="historia" class="py-20 bg-gradient-to-br from-white via-gray-50 to-gray-100">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid md:grid-cols-2 gap-12 items-center">
-        <!-- Imagem -->
-        <div data-aos="fade-right" class="relative">
-          <img src="img/Historia.jpg" alt="Equipe da VP Martins"
-            class="rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 w-full transform hover:scale-105">
-          <div class="absolute -bottom-4 -right-4 bg-red-700 text-white p-6 rounded-xl shadow-lg">
-            <div class="text-3xl font-bold">20+</div>
-            <div class="text-sm">Anos Atuando</div>
-          </div>
+    <section id="clientes" class="section bg-gray-50">
+      <div class="container-site">
+        <div class="mb-10 max-w-2xl">
+          <p class="mb-2 text-sm font-bold uppercase tracking-wide text-vp-red">Nossos clientes</p>
+          <h2 class="mb-3 text-3xl md:text-4xl">Empresas que Confiam em Nós</h2>
+          <p class="text-lg text-gray-700">Conheça alguns dos projetos especiais realizados pela VP Martins</p>
         </div>
-
-        <!-- Texto -->
-        <div data-aos="fade-left">
-          <div class="inline-block mb-4">
-            <span class="bg-red-100 text-red-700 px-4 py-2 rounded-full text-sm font-bold">QUEM SOMOS</span>
+        <article class="card mb-6 grid gap-6 p-0 md:grid-cols-2">
+          <img src="img/site/torres-residenciais-thumb.webp" alt="Torres residenciais vistas de baixo, em projeto da Empreendimentos Procave" width="600" height="276" loading="lazy" class="h-full min-h-[14rem] w-full rounded-t-xl object-cover md:rounded-l-xl md:rounded-tr-none">
+          <div class="p-6">
+            <p class="mb-2 text-sm font-bold uppercase tracking-wide text-vp-red">Projeto destaque</p>
+            <h3 class="mb-3 text-2xl">Empreendimentos Procave</h3>
+            <p class="mb-4 leading-relaxed text-gray-700">Realizamos um projeto completo de instalações hidráulicas e elétricas para a <strong>Empreendimentos Procave</strong>, uma empresa líder no setor de construção civil. O projeto incluiu desde o planejamento inicial até a execução final com rigor técnico e qualidade superior.</p>
+            <ul class="mb-6 space-y-2 text-gray-700">
+              <li class="flex gap-2"><i class="fas fa-check-circle mt-1 text-vp-red" aria-hidden="true"></i><span>Execução completa de hidráulica e elétrica</span></li>
+              <li class="flex gap-2"><i class="fas fa-check-circle mt-1 text-vp-red" aria-hidden="true"></i><span>Dentro do cronograma e orçamento</span></li>
+              <li class="flex gap-2"><i class="fas fa-check-circle mt-1 text-vp-red" aria-hidden="true"></i><span>Certificação de qualidade garantida</span></li>
+            </ul>
+            <a href="index.html#contato" class="btn-primary">Solicitar Orçamento</a>
           </div>
-          <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Nossa História e Missão</h2>
-
-          <div class="space-y-4 text-gray-700 leading-relaxed">
-            <p>
-              A <strong class="text-red-700 text-lg">VP Martins</strong> nasceu com o propósito de oferecer serviços
-              hidráulicos e elétricos de alta qualidade. Desde nossa fundação, trabalhamos para ser referência no
-              mercado de soluções técnicas.
-            </p>
-
-            <p>
-              Ao longo de mais de <strong>20 anos</strong>, consolidamos nossa reputação atuando em <strong>projetos
-                prediais, industriais e comerciais</strong>, sempre prezando por segurança, agilidade e conformidade
-              técnica.
-            </p>
-
-            <p>
-              Nossa experiência abrange construção civil, gerenciamento de obras, gerenciamento de projetos, execução,
-              automação, manutenção preventiva e reformas em geral. Tudo com profissionalismo e responsabilidade.
-            </p>
-
-            <div class="flex items-center space-x-2 mt-6 text-red-700 font-semibold">
-              <i class="fas fa-check-circle"></i>
-              <span>Certificado em qualidade e segurança</span>
-            </div>
-          </div>
-
-          <!-- Buttons -->
-          <div class="flex flex-col md:flex-row gap-4 mt-8">
-            <a href="#contato"
-              class="bg-red-700 text-white px-6 py-3 rounded-lg font-bold hover:bg-red-800 transition-all duration-300 text-center transform hover:scale-105">
-              Conheça Mais
-            </a>
-            <a href="projetos.html"
-              class="border-2 border-red-700 text-red-700 px-6 py-3 rounded-lg font-bold hover:bg-red-50 transition-all duration-300 text-center">
-              Ver Portfólio
-            </a>
-          </div>
+        </article>
+        <div class="grid gap-6 md:grid-cols-3">
+          <article class="card text-center">
+            <i class="fas fa-building mb-3 text-3xl text-vp-red" aria-hidden="true"></i>
+            <h3 class="mb-2 text-lg">Projetos Prediais</h3>
+            <p class="text-gray-700">Condomínios, apartamentos e edifícios comerciais</p>
+          </article>
+          <article class="card text-center">
+            <i class="fas fa-industry mb-3 text-3xl text-vp-red" aria-hidden="true"></i>
+            <h3 class="mb-2 text-lg">Indústrias</h3>
+            <p class="text-gray-700">Sistemas complexos para ambientes industriais</p>
+          </article>
+          <article class="card text-center">
+            <i class="fas fa-shopping-cart mb-3 text-3xl text-vp-red" aria-hidden="true"></i>
+            <h3 class="mb-2 text-lg">Comércio</h3>
+            <p class="text-gray-700">Lojas, restaurantes e estabelecimentos comerciais</p>
+          </article>
         </div>
       </div>
+    </section>
 
-      <!-- Stats Grid -->
-      <div class="grid md:grid-cols-4 gap-6 mt-20">
-        <div
-          class="bg-white p-8 rounded-xl shadow-md text-center hover:shadow-xl transition-all duration-300 transform hover:scale-105"
-          data-aos="zoom-in" data-aos-delay="0">
-          <div class="text-4xl font-bold text-red-700 mb-2">20+</div>
-          <div class="text-gray-600 font-semibold">Anos de Experiência</div>
+    <section id="portfolio" class="section">
+      <div class="container-site">
+        <div class="mb-10 max-w-2xl">
+          <p class="mb-2 text-sm font-bold uppercase tracking-wide text-vp-red">Portfólio</p>
+          <h2 class="mb-3 text-3xl md:text-4xl">Nossos Projetos</h2>
+          <p class="text-lg text-gray-700">Conheça alguns trabalhos realizados pela VP Martins em serviços de hidráulica e elétrica.</p>
         </div>
-        <div
-          class="bg-white p-8 rounded-xl shadow-md text-center hover:shadow-xl transition-all duration-300 transform hover:scale-105"
-          data-aos="zoom-in" data-aos-delay="100">
-          <div class="text-4xl font-bold text-red-700 mb-2">+50</div>
-          <div class="text-gray-600 font-semibold">Projetos Realizados</div>
+        <div class="grid grid-cols-2 gap-3 md:grid-cols-3 md:gap-4">
+          <a href="projetos.html" class="block overflow-hidden rounded-xl">
+            <img src="img/site/incendio-tubulacao-vermelha-thumb.webp" alt="Tubulações vermelhas verticais de combate a incêndio em poço técnico de prédio" width="600" height="1303" loading="lazy" class="aspect-[4/3] w-full object-cover">
+          </a>
+          <a href="projetos.html" class="block overflow-hidden rounded-xl">
+            <img src="img/site/bombas-casa-de-maquinas-thumb.webp" alt="Técnico de camiseta vermelha instalando conjunto de bombas verdes em casa de máquinas" width="600" height="402" loading="lazy" class="aspect-[4/3] w-full object-cover">
+          </a>
+          <a href="projetos.html" class="block overflow-hidden rounded-xl">
+            <img src="img/site/feixe-tubos-sala-tecnica-thumb.webp" alt="Feixe de tubos claros com curvas organizadas em parede de sala técnica" width="600" height="300" loading="lazy" class="aspect-[4/3] w-full object-cover">
+          </a>
+          <a href="projetos.html" class="block overflow-hidden rounded-xl">
+            <img src="img/site/sistema-inox-paineis-thumb.webp" alt="Dois técnicos montando sistema com tubos de inox, válvulas vermelhas e painéis elétricos" width="600" height="402" loading="lazy" class="aspect-[4/3] w-full object-cover">
+          </a>
+          <a href="projetos.html" class="block overflow-hidden rounded-xl">
+            <img src="img/site/registros-azuis-concreto-thumb.webp" alt="Três registros azuis ligados a tubulação de ferro em caixa de concreto" width="600" height="397" loading="lazy" class="aspect-[4/3] w-full object-cover">
+          </a>
+          <a href="projetos.html" class="block overflow-hidden rounded-xl">
+            <img src="img/site/bomba-incendio-base-metalica-thumb.webp" alt="Conjunto vermelho de bombas de incêndio, com motor e tubulação, montado sobre base metálica" width="600" height="290" loading="lazy" class="aspect-[4/3] w-full object-cover">
+          </a>
         </div>
-        <div
-          class="bg-white p-8 rounded-xl shadow-md text-center hover:shadow-xl transition-all duration-300 transform hover:scale-105"
-          data-aos="zoom-in" data-aos-delay="200">
-          <div class="text-4xl font-bold text-red-700 mb-2">100%</div>
-          <div class="text-gray-600 font-semibold">Clientes Satisfeitos</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Seção de Nossos Clientes -->
-  <section id="clientes" class="py-20 bg-gradient-to-br from-gray-100 via-white to-gray-50">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-16" data-aos="fade-up">
-        <div class="inline-block mb-4">
-          <span class="bg-red-100 text-red-700 px-4 py-2 rounded-full text-sm font-bold">NOSSOS CLIENTES</span>
-        </div>
-        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Empresas que Confiam em Nós</h2>
-        <p class="text-gray-600 text-lg max-w-2xl mx-auto">Conheça alguns dos projetos especiais realizados pela VP
-          Martins</p>
-      </div>
-
-      <!-- Cliente Destaque - Empreendimentos Procave -->
-      <div class="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 mb-12"
-        data-aos="zoom-in">
-        <div class="grid md:grid-cols-2 gap-0">
-          <!-- Imagem -->
-          <div
-            class="relative h-96 md:h-auto overflow-hidden bg-gradient-to-br from-red-50 to-red-100 flex items-center justify-center">
-            <img src="img/procave.jpg" alt="Empreendimentos Procave"
-              class="w-full h-full object-cover hover:scale-110 transition-transform duration-300">
-            <!-- Fallback se imagem não existir -->
-            <div
-              class="absolute inset-0 bg-gradient-to-br from-red-600/80 to-red-900/80 flex items-center justify-center text-white"
-              style="display: none;">
-              <div class="text-center">
-                <i class="fas fa-building text-6xl mb-4"></i>
-                <p class="text-2xl font-bold">Empreendimentos Procave</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Informações -->
-          <div class="p-8 md:p-12 flex flex-col justify-center">
-            <div class="mb-4">
-              <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-xs font-bold">PROJETO
-                DESTAQUE</span>
-            </div>
-
-            <h3 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Empreendimentos Procave</h3>
-
-            <p class="text-gray-700 leading-relaxed mb-6">
-              Realizamos um projeto completo de instalações hidráulicas e elétricas para a <strong>Empreendimentos
-                Procave</strong>,
-              uma empresa líder no setor de construção civil. O projeto incluiu desde o planejamento inicial até a
-              execução final com
-              rigor técnico e qualidade superior.
-            </p>
-
-            <div class="space-y-3 mb-8">
-              <div class="flex items-center text-gray-700">
-                <i class="fas fa-check-circle text-yellow-400 mr-3 text-lg"></i>
-                <span>Execução completa de hidráulica e elétrica</span>
-              </div>
-              <div class="flex items-center text-gray-700">
-                <i class="fas fa-check-circle text-yellow-400 mr-3 text-lg"></i>
-                <span>Dentro do cronograma e orçamento</span>
-              </div>
-              <div class="flex items-center text-gray-700">
-                <i class="fas fa-check-circle text-yellow-400 mr-3 text-lg"></i>
-                <span>Certificação de qualidade garantida</span>
-              </div>
-            </div>
-
-            <!-- Botão para vídeo -->
-            <div class="flex flex-col sm:flex-row gap-4">
-              <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer"
-                class="inline-flex items-center justify-center bg-gradient-to-r from-red-600 to-red-700 text-white px-8 py-4 rounded-lg font-bold hover:from-red-700 hover:to-red-800 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105">
-                <i class="fas fa-play mr-3"></i>
-                Assistir Vídeo
-              </a>
-              <a href="#contato"
-                class="inline-flex items-center justify-center border-2 border-red-600 text-red-600 px-8 py-4 rounded-lg font-bold hover:bg-red-50 transition-all duration-300">
-                Solicitar Orçamento
-              </a>
-            </div>
-          </div>
+        <div class="mt-8 text-center">
+          <a href="projetos.html" class="btn-secondary">Ver todos os projetos</a>
         </div>
       </div>
+    </section>
 
-      <!-- Grid de outros clientes (opcional) -->
-      <div class="grid md:grid-cols-3 gap-6">
-        <div
-          class="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 border-l-4 border-red-700 text-center"
-          data-aos="fade-up" data-aos-delay="0">
-          <i class="fas fa-building text-4xl text-red-700 mb-4"></i>
-          <h4 class="text-xl font-bold text-gray-900 mb-2">Projetos Prediais</h4>
-          <p class="text-gray-600">Condomínios, apartamentos e edifícios comerciais</p>
+    <section id="contato" class="section bg-gray-50">
+      <div class="container-site">
+        <div class="mb-10 max-w-2xl">
+          <h2 class="mb-3 text-3xl text-vp-red md:text-4xl">Fale Conosco</h2>
+          <p class="text-lg text-gray-700">Entre em contato e solicite seu orçamento</p>
         </div>
-
-        <div
-          class="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 border-l-4 border-red-700 text-center"
-          data-aos="fade-up" data-aos-delay="100">
-          <i class="fas fa-industry text-4xl text-red-700 mb-4"></i>
-          <h4 class="text-xl font-bold text-gray-900 mb-2">Indústrias</h4>
-          <p class="text-gray-600">Sistemas complexos para ambientes industriais</p>
+        <div class="grid gap-6 md:grid-cols-3">
+          <article class="card flex flex-col text-center">
+            <i class="fab fa-whatsapp mb-4 self-center text-4xl text-vp-red" aria-hidden="true"></i>
+            <h3 class="mb-3 text-xl">WhatsApp</h3>
+            <p class="mb-6 flex-1 text-gray-700">Envie uma mensagem e receba um atendimento rápido e personalizado</p>
+            <a href="https://wa.me/5547991012690?text=Ol%C3%A1%2C%20gostaria%20de%20fazer%20um%20or%C3%A7amento." target="_blank" rel="noopener" class="btn-primary"><i class="fab fa-whatsapp" aria-hidden="true"></i>Chamar no WhatsApp</a>
+          </article>
+          <article class="card flex flex-col text-center">
+            <i class="fas fa-phone mb-4 self-center text-4xl text-vp-red" aria-hidden="true"></i>
+            <h3 class="mb-3 text-xl">Telefone</h3>
+            <p class="mb-6 flex-1 text-gray-700">Seg-Sex: 08h às 18h</p>
+            <a href="tel:+5547991012690" class="btn-primary"><i class="fas fa-phone" aria-hidden="true"></i>(47) 99101-2690</a>
+          </article>
+          <article class="card flex flex-col text-center">
+            <i class="fas fa-envelope mb-4 self-center text-4xl text-vp-red" aria-hidden="true"></i>
+            <h3 class="mb-3 text-xl">E-mail</h3>
+            <p class="mb-6 flex-1 text-gray-700">Resposta em até 24 horas</p>
+            <a href="mailto:vpmartinsadm@gmail.com" class="btn-primary break-all"><i class="fas fa-envelope" aria-hidden="true"></i>vpmartinsadm@gmail.com</a>
+          </article>
         </div>
-
-        <div
-          class="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 border-l-4 border-red-700 text-center"
-          data-aos="fade-up" data-aos-delay="200">
-          <i class="fas fa-shopping-cart text-4xl text-red-700 mb-4"></i>
-          <h4 class="text-xl font-bold text-gray-900 mb-2">Comércio</h4>
-          <p class="text-gray-600">Lojas, restaurantes e estabelecimentos comerciais</p>
-        </div>
+        <p class="mt-8 text-center text-gray-700"><i class="fas fa-location-dot mr-2 text-vp-red" aria-hidden="true"></i>Itajaí - SC. Atendimento em toda região.</p>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
-  <!-- Seção de Contato -->
-  <section id="contato" class="py-20 bg-white">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-16">
-        <h2 class="text-4xl md:text-5xl font-bold text-red-700 mb-4">Fale Conosco</h2>
-        <p class="text-gray-600 text-lg">Entre em contato e solicite seu orçamento</p>
-      </div>
-
-      <div class="grid md:grid-cols-2 gap-12">
-        <!-- Informações de Contato -->
-        <div class="space-y-8" data-aos="fade-right">
-
-          <div class="flex items-start space-x-4">
-            <div class="flex-shrink-0">
-              <div class="flex items-center justify-center h-12 w-12 rounded-md bg-red-700 text-white">
-                <i class="fas fa-phone"></i>
-              </div>
-            </div>
-            <div>
-              <h3 class="text-xl font-bold text-gray-900">Telefone</h3>
-              <p class="text-gray-600 mt-1">(47) 99250-8321</p>
-              <p class="text-gray-600">Seg-Sex: 08h às 18h</p>
-            </div>
-          </div>
-
-          <div class="flex items-start space-x-4">
-            <div class="flex-shrink-0">
-              <div class="flex items-center justify-center h-12 w-12 rounded-md bg-red-700 text-white">
-                <i class="fas fa-envelope"></i>
-              </div>
-            </div>
-            <div>
-              <h3 class="text-xl font-bold text-gray-900">E-mail</h3>
-              <p class="text-gray-600 mt-1">vpmartinsadm@gmail.com.br</p>
-              <p class="text-gray-600">Resposta em até 2 horas</p>
-            </div>
-          </div>
-
-          <div class="flex items-start space-x-4">
-            <div class="flex-shrink-0">
-              <div class="flex items-center justify-center h-12 w-12 rounded-md bg-red-700 text-white">
-                <i class="fas fa-location-dot"></i>
-              </div>
-            </div>
-            <div>
-              <h3 class="text-xl font-bold text-gray-900">Localização</h3>
-              <p class="text-gray-600 mt-1">Itajaí - SC</p>
-              <p class="text-gray-600">Atendimento em toda região</p>
-            </div>
-          </div>
-
-        </div>
-
-        <!-- Formulário -->
-        <div data-aos="fade-left">
-          <form action="https://formsubmit.co/vpmartinsadm@gmail.com" method="POST"
-            class="space-y-4 bg-gray-50 p-8 rounded-xl shadow-lg" id="contactForm">
-
-            <!-- CONFIGURAÇÕES DO FORMSUBMIT -->
-            <input type="hidden" name="_next" value="https://AntonyCosta1.github.io/vpmartins-website/obrigado.html">
-            <input type="hidden" name="_subject" value="Novo contato - Site VP Martins">
-            <input type="hidden" name="_captcha" value="false">
-
-            <div>
-              <label for="nome" class="block text-sm font-bold text-gray-900 mb-2">Nome</label>
-              <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required
-                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-700 focus:border-transparent transition" />
-            </div>
-
-            <div>
-              <label for="email" class="block text-sm font-bold text-gray-900 mb-2">E-mail</label>
-              <input type="email" id="email" name="email" placeholder="seu@email.com" required
-                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-700 focus:border-transparent transition" />
-            </div>
-
-            <div>
-              <label for="telefone" class="block text-sm font-bold text-gray-900 mb-2">Telefone</label>
-              <input type="tel" id="telefone" name="telefone" placeholder="(11) 99999-9999" required
-                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-700 focus:border-transparent transition" />
-            </div>
-
-            <div>
-              <label for="mensagem" class="block text-sm font-bold text-gray-900 mb-2">Mensagem</label>
-              <textarea id="mensagem" name="mensagem" placeholder="Descreva seu projeto ou dúvida..." required rows="5"
-                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-700 focus:border-transparent transition resize-none"></textarea>
-            </div>
-
-            <button type="submit"
-              class="w-full bg-gradient-to-r from-red-700 to-red-900 text-white font-bold py-3 px-6 rounded-lg hover:from-red-800 hover:to-black transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105">
-              Enviar Mensagem
-            </button>
-
-            <p class="text-xs text-gray-600 text-center mt-4">Respeita sua privacidade. Não fazemos spam.</p>
-          </form>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- Footer -->
-  <footer class="bg-gradient-to-br from-gray-900 via-red-900 to-gray-900 text-white py-16">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid md:grid-cols-4 gap-10 mb-12">
-        <!-- Sobre -->
-        <div data-aos="fade-up" data-aos-delay="0">
-          <div class="flex items-center mb-4">
-            <i class="fas fa-shield-alt text-yellow-400 text-2xl mr-2"></i>
-            <h4 class="font-bold text-xl">VP Martins</h4>
-          </div>
-          <p class="text-gray-300 text-sm leading-relaxed">Serviços profissionais de hidráulica e elétrica com mais de
-            20 anos de experiência e excelência no mercado.</p>
-          <div class="mt-4 flex space-x-3">
-            <a href="https://www.facebook.com/share/18TPzP5fPe/"
-              class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-yellow-400 hover:text-gray-900 transition"><i
-                class="fab fa-facebook-f"></i></a>
-            <a href="https://www.instagram.com/vpmartins.instaladora?igsh=MWNsYWswM3QwdHM4Ng=="
-              class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-yellow-400 hover:text-gray-900 transition"><i
-                class="fab fa-instagram"></i></a>
-            <a href="https://wa.me/5547992508321?text=Ol%C3%A1%2C%20gostaria%20de%20fazer%20um%20or%C3%A7amento."
-              class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-yellow-400 hover:text-gray-900 transition"><i
-                class="fab fa-whatsapp"></i></a>
-          </div>
-        </div>
-
-        <!-- Links Rápidos -->
-        <div data-aos="fade-up" data-aos-delay="100">
-          <h4 class="font-bold text-lg mb-6 text-yellow-400">Navegação</h4>
-          <ul class="space-y-3">
-            <li><a href="#hero" class="text-gray-300 hover:text-yellow-400 transition duration-300 flex items-center"><i
-                  class="fas fa-chevron-right text-xs mr-2"></i>Início</a></li>
-            <li><a href="#servicos"
-                class="text-gray-300 hover:text-yellow-400 transition duration-300 flex items-center"><i
-                  class="fas fa-chevron-right text-xs mr-2"></i>Serviços</a></li>
-            <li><a href="#historia"
-                class="text-gray-300 hover:text-yellow-400 transition duration-300 flex items-center"><i
-                  class="fas fa-chevron-right text-xs mr-2"></i>Quem Somos</a></li>
-            <li><a href="#clientes"
-                class="text-gray-300 hover:text-yellow-400 transition duration-300 flex items-center"><i
-                  class="fas fa-chevron-right text-xs mr-2"></i>Clientes</a></li>
-            <li><a href="#contato"
-                class="text-gray-300 hover:text-yellow-400 transition duration-300 flex items-center"><i
-                  class="fas fa-chevron-right text-xs mr-2"></i>Contato</a></li>
-            >
-            <li><a href="#projetos.html"
-                class="text-gray-300 hover:text-yellow-400 transition duration-300 flex items-center"><i
-                  class="fas fa-chevron-right text-xs mr-2"></i>Portfolio</a></li>
+  <footer class="on-dark bg-gray-900 py-12 text-gray-300">
+    <div class="container-site">
+      <div class="grid gap-10 md:grid-cols-3">
+        <div>
+          <h2 class="mb-3 text-lg text-white">VP Martins</h2>
+          <p class="text-sm leading-relaxed">Serviços profissionais de hidráulica e elétrica com mais de 20 anos de experiência e excelência no mercado.</p>
+          <ul class="mt-4 flex gap-3">
+            <li><a href="https://www.facebook.com/share/18TPzP5fPe/" aria-label="Facebook" class="flex h-11 w-11 items-center justify-center rounded-full bg-white/10 hover:bg-vp-yellow hover:text-gray-900"><i class="fab fa-facebook-f" aria-hidden="true"></i></a></li>
+            <li><a href="https://www.instagram.com/vpmartins.instaladora?igsh=MWNsYWswM3QwdHM4Ng==" aria-label="Instagram" class="flex h-11 w-11 items-center justify-center rounded-full bg-white/10 hover:bg-vp-yellow hover:text-gray-900"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
+            <li><a href="https://wa.me/5547991012690?text=Ol%C3%A1%2C%20gostaria%20de%20fazer%20um%20or%C3%A7amento." aria-label="WhatsApp" class="flex h-11 w-11 items-center justify-center rounded-full bg-white/10 hover:bg-vp-yellow hover:text-gray-900"><i class="fab fa-whatsapp" aria-hidden="true"></i></a></li>
           </ul>
         </div>
-
-        <!-- Contato -->
-        <div data-aos="fade-up" data-aos-delay="200">
-          <h4 class="font-bold text-lg mb-6 text-yellow-400">Contato</h4>
-          <ul class="space-y-4">
-            <li class="flex items-start">
-              <i class="fas fa-phone text-yellow-400 mt-1 mr-3"></i>
-              <div>
-                <p class="font-semibold">Telefone</p>
-                <a href="tel:+554799250832" class="text-gray-300 hover:text-yellow-400 transition">(47) 99250-8321</a>
-              </div>
-            </li>
-            <li class="flex items-start">
-              <i class="fas fa-envelope text-yellow-400 mt-1 mr-3"></i>
-              <div>
-                <p class="font-semibold">E-mail</p>
-                <a href="mailto:vpmartinsadm@gmail.com.br"
-                  class="text-gray-300 hover:text-yellow-400 transition">vpmartinsadm@gmail.com.br</a>
-              </div>
-            </li>
+        <nav aria-label="Rodapé">
+          <h2 class="mb-3 text-lg text-white">Navegação</h2>
+          <ul class="space-y-1 text-sm">
+            <li><a href="index.html" class="inline-block py-1 hover:text-vp-yellow">Início</a></li>
+            <li><a href="index.html#servicos" class="inline-block py-1 hover:text-vp-yellow">Serviços</a></li>
+            <li><a href="index.html#quem-somos" class="inline-block py-1 hover:text-vp-yellow">Quem Somos</a></li>
+            <li><a href="projetos.html" class="inline-block py-1 hover:text-vp-yellow">Portfólio</a></li>
+            <li><a href="index.html#contato" class="inline-block py-1 hover:text-vp-yellow">Contato</a></li>
+            <li><a href="privacidade.html" class="inline-block py-1 hover:text-vp-yellow">Política de Privacidade</a></li>
+          </ul>
+        </nav>
+        <div>
+          <h2 class="mb-3 text-lg text-white">Contato</h2>
+          <ul class="space-y-1 text-sm">
+            <li><a href="tel:+5547991012690" class="inline-block py-1 hover:text-vp-yellow"><i class="fas fa-phone mr-2 text-vp-yellow" aria-hidden="true"></i>(47) 99101-2690</a></li>
+            <li><a href="mailto:vpmartinsadm@gmail.com" class="inline-block py-1 hover:text-vp-yellow"><i class="fas fa-envelope mr-2 text-vp-yellow" aria-hidden="true"></i>vpmartinsadm@gmail.com</a></li>
+            <li class="py-1"><i class="fas fa-location-dot mr-2 text-vp-yellow" aria-hidden="true"></i>Itajaí - SC</li>
+            <li class="py-1"><i class="fas fa-clock mr-2 text-vp-yellow" aria-hidden="true"></i>Seg-Sex: 08h às 18h</li>
           </ul>
         </div>
-
-        <!-- Newsletter -->
-        <div data-aos="fade-up" data-aos-delay="300">
-          <h4 class="font-bold text-lg mb-6 text-yellow-400">Boletim</h4>
-          <p class="text-gray-300 text-sm mb-4">Receba novidades e dicas de manutenção em seu e-mail</p>
-          <form class="flex flex-col space-y-3">
-            <input type="email" placeholder="Seu e-mail"
-              class="px-4 py-2 rounded bg-white/10 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-yellow-400 transition"
-              required>
-            <button type="submit"
-              class="bg-yellow-400 text-gray-900 font-bold py-2 rounded hover:bg-yellow-300 transition transform hover:scale-105">Inscrever</button>
-          </form>
-        </div>
       </div>
-
-      <!-- Divider -->
-      <div class="border-t border-gray-700 py-8">
-        <div class="grid md:grid-cols-2 gap-8 items-center">
-          <div class="text-gray-300 text-sm">
-            <p>&copy; 2025 VP Martins - Hidráulica e Elétrica. Todos os direitos reservados.</p>
-          </div>
-          <div class="text-right text-gray-300 text-sm">
-            <p>Desenvolvido com <span class="text-red-500">❤</span> para sua satisfação</p>
-          </div>
-        </div>
+      <div class="mt-10 space-y-1 border-t border-gray-700 pt-6 text-center text-sm">
+        <p>Vanderlei Pereira Martins | CNPJ 04.982.483/0001-28 | Itajaí - SC</p>
+        <p>© 2026 Vanderlei Pereira Martins (VP Martins). Fotos: acervo próprio. Todos os direitos reservados.</p>
       </div>
     </div>
   </footer>
-
-  <!-- Botão Voltar ao Topo -->
-  <button id="backToTop"
-    class="fixed bottom-8 right-8 bg-red-600 text-white p-3 rounded-full shadow-lg hover:bg-red-700 transition-all duration-300 opacity-0 pointer-events-none transform translate-y-full"
-    title="Voltar ao Topo">
-    <i class="fas fa-arrow-up"></i>
-  </button>
-
-  <!-- Scripts -->
-  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-
-  <script>
-    // Inicializar Swiper
-    const swiper = new Swiper('.swiper-container', {
-      loop: true,
-      autoplay: { delay: 5000, disableOnInteraction: false },
-      pagination: { el: '.swiper-pagination', clickable: true },
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-    });
-
-    // Inicializar AOS (Animações)
-    AOS.init({
-      duration: 800,
-      easing: 'ease-in-out-quart',
-      once: true
-    });
-
-    // Menu Mobile
-    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
-
-    if (mobileMenuBtn) {
-      mobileMenuBtn.addEventListener('click', () => {
-        mobileMenu.classList.toggle('hidden');
-      });
-    }
-
-    // Fechar menu ao clicar em um link
-    document.querySelectorAll('#mobile-menu a').forEach(link => {
-      link.addEventListener('click', () => {
-        mobileMenu.classList.add('hidden');
-      });
-    });
-
-    // Scroll suave para âncoras
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          target.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          });
-        }
-      });
-    });
-
-    // Botão Voltar ao Topo
-    const backToTopBtn = document.getElementById('backToTop');
-
-    window.addEventListener('scroll', () => {
-      if (window.pageYOffset > 300) {
-        backToTopBtn.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-full');
-      } else {
-        backToTopBtn.classList.add('opacity-0', 'pointer-events-none', 'translate-y-full');
-      }
-    });
-
-    backToTopBtn.addEventListener('click', () => {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
-    });
-
-    // Validação e envio do formulário
-    const contactForm = document.getElementById('contactForm');
-    if (contactForm) {
-      contactForm.addEventListener('submit', function (e) {
-        // Validações básicas já são feitas pelo HTML5
-        console.log('Formulário enviado com sucesso');
-      });
-    }
-  </script>
 </body>
 
 </html>

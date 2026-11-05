@@ -1,0 +1,180 @@
+{
+  "capa": {
+    "width": 1600,
+    "height": 1072,
+    "thumbWidth": 600,
+    "thumbHeight": 402
+  },
+  "historia": {
+    "width": 1600,
+    "height": 1934,
+    "thumbWidth": 600,
+    "thumbHeight": 725
+  },
+  "obra-assentamento-tijolos": {
+    "width": 1600,
+    "height": 1067,
+    "thumbWidth": 600,
+    "thumbHeight": 400
+  },
+  "rede-gas-medidores": {
+    "width": 406,
+    "height": 538,
+    "thumbWidth": 406,
+    "thumbHeight": 538
+  },
+  "torres-residenciais": {
+    "width": 1600,
+    "height": 737,
+    "thumbWidth": 600,
+    "thumbHeight": 276
+  },
+  "incendio-tubulacao-vermelha": {
+    "width": 737,
+    "height": 1600,
+    "thumbWidth": 600,
+    "thumbHeight": 1303
+  },
+  "tubos-parede-concreto": {
+    "width": 1600,
+    "height": 1204,
+    "thumbWidth": 600,
+    "thumbHeight": 452
+  },
+  "edificio-em-construcao": {
+    "width": 1600,
+    "height": 737,
+    "thumbWidth": 600,
+    "thumbHeight": 276
+  },
+  "tubulacao-suspensa-teto": {
+    "width": 720,
+    "height": 1600,
+    "thumbWidth": 600,
+    "thumbHeight": 1333
+  },
+  "maquina-rosquear-tubos": {
+    "width": 540,
+    "height": 1204,
+    "thumbWidth": 540,
+    "thumbHeight": 1204
+  },
+  "bombas-casa-de-maquinas": {
+    "width": 1600,
+    "height": 1072,
+    "thumbWidth": 600,
+    "thumbHeight": 402
+  },
+  "tubos-curva-teto-parede": {
+    "width": 720,
+    "height": 1600,
+    "thumbWidth": 600,
+    "thumbHeight": 1333
+  },
+  "prumada-abracadeiras-pretas": {
+    "width": 720,
+    "height": 1600,
+    "thumbWidth": 600,
+    "thumbHeight": 1333
+  },
+  "tubos-alinhados-parede": {
+    "width": 720,
+    "height": 1190,
+    "thumbWidth": 600,
+    "thumbHeight": 992
+  },
+  "corredor-tecnico-tubos": {
+    "width": 720,
+    "height": 1190,
+    "thumbWidth": 600,
+    "thumbHeight": 992
+  },
+  "corredor-tecnico-teto": {
+    "width": 900,
+    "height": 1488,
+    "thumbWidth": 600,
+    "thumbHeight": 992
+  },
+  "tecnico-apontando-prumada": {
+    "width": 900,
+    "height": 1488,
+    "thumbWidth": 600,
+    "thumbHeight": 992
+  },
+  "feixe-tubos-sala-tecnica": {
+    "width": 1600,
+    "height": 801,
+    "thumbWidth": 600,
+    "thumbHeight": 300
+  },
+  "tecnico-conferindo-tubos": {
+    "width": 900,
+    "height": 1488,
+    "thumbWidth": 600,
+    "thumbHeight": 992
+  },
+  "registro-azul-caixa": {
+    "width": 963,
+    "height": 1165,
+    "thumbWidth": 600,
+    "thumbHeight": 726
+  },
+  "tecnico-passarela-tanques": {
+    "width": 963,
+    "height": 1165,
+    "thumbWidth": 600,
+    "thumbHeight": 726
+  },
+  "sistema-inox-paineis": {
+    "width": 1280,
+    "height": 857,
+    "thumbWidth": 600,
+    "thumbHeight": 402
+  },
+  "tecnicos-sala-tubos-valvulas": {
+    "width": 1204,
+    "height": 1456,
+    "thumbWidth": 600,
+    "thumbHeight": 726
+  },
+  "vala-tubulacao-preta": {
+    "width": 1204,
+    "height": 1456,
+    "thumbWidth": 600,
+    "thumbHeight": 726
+  },
+  "registros-azuis-concreto": {
+    "width": 1280,
+    "height": 847,
+    "thumbWidth": 600,
+    "thumbHeight": 397
+  },
+  "solda-tubo-polietileno": {
+    "width": 1204,
+    "height": 1456,
+    "thumbWidth": 600,
+    "thumbHeight": 726
+  },
+  "poco-concreto-tubulacao": {
+    "width": 963,
+    "height": 1165,
+    "thumbWidth": 600,
+    "thumbHeight": 726
+  },
+  "bomba-incendio-base-metalica": {
+    "width": 1280,
+    "height": 619,
+    "thumbWidth": 600,
+    "thumbHeight": 290
+  },
+  "equipe-uniforme-vermelho": {
+    "width": 1296,
+    "height": 972,
+    "thumbWidth": 600,
+    "thumbHeight": 450
+  },
+  "logo": {
+    "width": 306,
+    "height": 120
+  }
+}

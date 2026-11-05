@@ -1,0 +1,59 @@
+@font-face {
+  font-family: 'Inter';
+  src: url('../vendor/inter/inter-latin-wght-normal.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { -webkit-text-size-adjust: 100%; }
+
+  [id] { scroll-margin-top: 6rem; }
+
+  :focus-visible {
+    outline: 3px solid #A60D18;
+    outline-offset: 2px;
+  }
+
+  .on-dark :focus-visible,
+  .on-dark:focus-visible { outline-color: #FFD60A; }
+
+  h1, h2, h3 { line-height: 1.2; font-weight: 700; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+}
+
+@layer components {
+  .container-site { @apply mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8; }
+  .section { @apply py-14 md:py-20; }
+  .card { @apply rounded-xl border border-gray-200 bg-white p-6 shadow-sm; }
+
+  .btn-primary,
+  .btn-secondary {
+    @apply inline-flex min-h-[44px] items-center justify-center gap-2 rounded-lg px-6 py-3 text-center font-bold transition-colors duration-200;
+  }
+  .btn-primary { @apply bg-vp-yellow text-gray-900 hover:bg-yellow-300; }
+  .btn-secondary { @apply border-2 border-vp-red bg-white text-vp-red hover:bg-red-50; }
+}
+
+/* Sem JavaScript o menu fica sempre visível. */
+@media (max-width: 767px) {
+  .js #menu-principal { display: none; }
+  .js #menu-principal.is-open { display: block; }
+  /* O menu aberto o tempo todo cobriria a tela se o cabeçalho ficasse fixo. */
+  html:not(.js) header { position: static; }
+  html:not(.js) #menu-toggle { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; scroll-behavior: auto !important; }
+}
+
+dialog::backdrop { background: rgb(0 0 0 / 0.85); }
